@@ -28,10 +28,12 @@ img {
 }
 
 :root {
+    --light-background: rgb(255, 255, 255);
     --light-color: rgb(246, 251, 255);
     --dark-color: rgb(18, 8, 59);
     --blue-color: rgb(0, 171, 255);
     --blue-color-hover: rgb(26, 146, 206);
+    --blue-shadow: rgb(26, 146, 206);
     --foxy-color: rgb(240, 124, 15);
     --font-family: 'Fira Sans', sans-serif;
 
@@ -228,8 +230,8 @@ body {
     margin-top: 10px;
     height: 75vh;
     width: 100%;
-    background-color: burlywood;
-    border: solid 3px red;
+    /* background-color: burlywood;
+    border: solid 3px red; */
 }
 
 /* footer */
