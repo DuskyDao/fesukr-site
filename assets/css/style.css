@@ -33,7 +33,7 @@ img {
     --dark-color: rgb(18, 8, 59);
     --blue-color: rgb(0, 171, 255);
     --blue-color-hover: rgb(26, 146, 206);
-    --blue-shadow: rgb(26, 146, 206);
+    --blue-shadow: rgb(159, 201, 223);
     --foxy-color: rgb(240, 124, 15);
     --font-family: 'Fira Sans', sans-serif;
 
@@ -92,8 +92,15 @@ header {
 }
 
 .links_header img {
-    width: 25px;
     margin: 0;
+
+    &:nth-child(1) {
+        width: 20px;
+    }
+
+    &:nth-child(3) {
+        width: 25px;
+    }
 }
 
 .links_header p,
@@ -122,6 +129,8 @@ header {
     align-items: center;
     width: 25px;
     margin: 0 4px;
+
+
 }
 
 .social li a:hover {

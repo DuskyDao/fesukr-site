@@ -84,7 +84,7 @@
     min-width: 500px;
     opacity: .95;
     border-radius: 3px;
-    box-shadow: 0 0 10px 5px rgba(182, 194, 207, 0.5);
+    box-shadow: 0 0 5px 0px var(--blue-shadow);
 }
 
 .contact_box ol h2 {
