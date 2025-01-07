@@ -12,12 +12,12 @@ main ul {
 
 h1 {
     margin-top: 3vw;
-    font-size: 4rem;
+    font-size: clamp(1.2rem, 2.5vw, 3.5rem);
 }
 
 h2 {
     margin-top: 2vw;
-    font-size: 2rem;
+    font-size: clamp(0.8rem, 1.3vw, 1.5rem);
 }
 
 .buyers__img {
@@ -29,7 +29,7 @@ h2 {
 
 .buyers__desc {
     margin-bottom: 3vw;
-    font-size: 1.2rem;
+    font-size: clamp(0.8rem, 1vw, 1.2rem);
 
     & h2 {
         text-indent: 2em;
@@ -39,11 +39,10 @@ h2 {
 }
 
 .commers {
-    font-weight: 500;
-
     & a {
         margin-left: 5px;
         color: var(--dark-color);
+        font-weight: 500;
 
         &:hover {
             color: var(--blue-color);
