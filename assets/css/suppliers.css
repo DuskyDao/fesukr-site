@@ -1,0 +1,39 @@
+main ul {
+  list-style: inside;
+
+  & li::marker {
+    color: var(--blue-color);
+  }
+}
+
+h2 {
+  margin-top: 2vw;
+}
+
+h3 {
+  margin-top: 1vw;
+  color: var(--blue-color);
+}
+
+.table__dsc {
+  text-align: center;
+}
+
+.table__main {
+  display: flex;
+  justify-content: center;
+  gap: 2vw;
+  margin-bottom: 2vw;
+
+  h3 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  ol>li {
+    margin-top: 3px;
+  }
+}
+
+.legal,
+.physical {}
