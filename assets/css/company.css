@@ -22,7 +22,6 @@
     padding: 15px 2vw 5px 2vw;
     font-size: clamp(1rem, 1vw, 1.3rem);
     font-weight: 500;
-    color: var(--blue-color);
     cursor: pointer;
     transition: background 0.3s ease;
 
@@ -32,7 +31,7 @@
 
     &:hover {
         background: var(--blue-color);
-        color: aliceblue;
+        color: var(--light-color)
     }
 }
 
@@ -48,11 +47,22 @@
     font-size: 1.1rem;
 
     & h2 {
+        text-indent: 4rem;
         color: var(--blue-color);
     }
 
     & p {
         margin-top: 10px;
+    }
+
+    & ul {
+        list-style: inside;
+        margin-top: 5px;
+        padding-left: 20px;
+
+        & li::marker {
+            color: var(--blue-color);
+        }
     }
 }
 
