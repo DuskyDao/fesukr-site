@@ -1,5 +1,8 @@
-main ul {
+main ul,
+main ol {
   list-style: inside;
+  margin-left: 10px;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 
   & li::marker {
     color: var(--blue-color);
@@ -8,11 +11,16 @@ main ul {
 
 h2 {
   margin-top: 2vw;
+  text-indent: 2em;
 }
 
 h3 {
   margin-top: 1vw;
   color: var(--blue-color);
+}
+
+p {
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
 
 .table__dsc {
@@ -22,18 +30,41 @@ h3 {
 .table__main {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 2vw;
   margin-bottom: 2vw;
+}
+
+.legal,
+.physical {
+  max-width: 40%;
+  min-width: 270px;
+  margin-top: 1vw;
+  padding: 3vh 2vw 5vh 2vw;
+  border-radius: 3px;
+  background-color: var(--light-background);
+  box-shadow: 0px 0px 5px var(--blue-shadow);
 
   h3 {
     text-align: center;
     font-size: 1.5rem;
+    margin-bottom: 0.8vw;
   }
 
-  ol>li {
-    margin-top: 3px;
+  & ol li {
+    position: relative;
+    list-style: none;
+    padding-left: 18px;
+    line-height: 1.7rem;
+  }
+
+  & ol li::before {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: url(../img/icons/vacancies/yes.svg) center center /cover no-repeat;
   }
 }
-
-.legal,
-.physical {}
