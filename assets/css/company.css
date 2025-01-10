@@ -19,9 +19,9 @@
 
 .tabs label {
     display: block;
-    padding: 15px 2vw 5px 2vw;
+    padding: 25px 2vw 15px 2vw;
     font-size: clamp(1rem, 1vw, 1.3rem);
-    font-weight: 500;
+    /* font-weight: 500; */
     cursor: pointer;
     transition: background 0.3s ease;
 
