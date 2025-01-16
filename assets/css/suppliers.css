@@ -9,19 +9,22 @@ main ol {
   }
 }
 
-h2 {
-  margin-top: 2vw;
-  text-indent: 2em;
+.suppliers {
+  & h2 {
+    margin-top: 2vw;
+    text-indent: 2em;
+  }
+
+  & h3 {
+    margin-top: 1vw;
+    color: var(--blue-color);
+  }
+
+  & p {
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+  }
 }
 
-h3 {
-  margin-top: 1vw;
-  color: var(--blue-color);
-}
-
-p {
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
-}
 
 .table__dsc {
   text-align: center;
@@ -54,6 +57,7 @@ p {
   & ol li {
     position: relative;
     list-style: none;
+    margin-top: 10px;
     padding-left: 18px;
     line-height: 1.7rem;
   }

@@ -185,6 +185,7 @@ header {
 .nav_list>li {
     display: inline-block;
     position: relative;
+    transition: background 0.3s ease;
 }
 
 ul.nav_list li.active,
@@ -213,7 +214,7 @@ ul.nav_list>li:hover {
     display: block;
     padding: 0 10px;
     background-color: var(--blue-color);
-    border-bottom: solid 2px var(--light-color);
+    border-bottom: solid 1px var(--light-color);
 }
 
 .sub_menu li:last-child {
@@ -252,11 +253,15 @@ footer p {
 
 .footer_info {
     display: flex;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+    gap: 2vw;
     justify-content: center;
 }
 
-.footer_info li {
-    margin: 30px 20px;
+.footer_info>li {
+    min-width: 120px;
+
 }
 
 .footer_info li ul li {
