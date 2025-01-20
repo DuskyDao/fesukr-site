@@ -59,9 +59,18 @@
         }
 
         & .brand__text {
-            margin-top: 15px;
+            margin-top: 10px;
             font-size: clamp(0.8rem, 1.1vw, 1.2rem);
-            font-weight: 500;
+            /* font-weight: 500; */
+
+            & p {
+                text-indent: 30px;
+            }
+
+            & p:not(:first-child),
+            ul {
+                display: none;
+            }
         }
     }
 
@@ -123,8 +132,27 @@
         }
 
         & .brand__text {
-            margin-top: 2vw;
+            margin-top: 0;
             color: var(--light-color);
+
+            & p {
+                display: none;
+            }
+
+            & p:not(:first-child) {
+                display: block;
+                margin-top: 10px;
+                text-indent: 30px;
+            }
+
+            ul {
+                display: block;
+                list-style: inside;
+
+                & li::marker {
+                    color: var(--light-color);
+                }
+            }
         }
 
         a {
