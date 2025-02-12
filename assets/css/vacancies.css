@@ -145,7 +145,6 @@ main ul {
     & span {
         font-weight: 500;
         color: var(--dark-color);
-        /* color: var(--blue-color); */
     }
 
     &.icons::before {
@@ -156,7 +155,6 @@ main ul {
 }
 
 .vacancie__desc .vacancie__mode {
-    /* color: var(--blue-color); */
     font-weight: 500;
 
     &.icons::before {
@@ -211,7 +209,7 @@ main ul {
 .vacancies__bottom p {
     font-size: 1.2rem;
     margin-top: 10px;
-    text-indent: 2em;
+    /* text-indent: 2em; */
 
     &:first-child {
         margin-top: 3vw;

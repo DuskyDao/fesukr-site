@@ -29,6 +29,7 @@ img {
 
 :root {
     --light-background: rgb(255, 255, 255);
+    --dark-background: rgba(0, 0, 0, 0.04);
     --light-color: rgb(246, 251, 255);
     --dark-color: rgb(18, 8, 59);
     --blue-color: rgb(0, 171, 255);
@@ -51,7 +52,7 @@ img {
 html {
     font-size: .8rem;
     font-family: var(--font-family);
-    background-color: var(--light-color);
+    background-color: var(--dark-background);
     color: var(--dark-color);
 }
 
@@ -66,9 +67,9 @@ html {
     }
 }
 
-/* header */
+/* top block socials */
 .header_top {
-    background-color: var(--light-color);
+    background-color: var(--dark-background);
     position: relative;
     z-index: 9;
 }
@@ -172,7 +173,7 @@ header {
 }
 
 .logo_text span {
-    color: rgb(18, 8, 59);
+    color: var(--dark-color);
     font-weight: 500
 }
 
