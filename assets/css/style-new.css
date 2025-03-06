@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 h1,
 h2,
@@ -219,43 +219,33 @@ header {
     z-index: 3;
 }
 
-.header_main {
+.header__main {
     background-color: var(--blue-color);
     width: 100%;
 }
 
-.header_main_container {
+.header__main_container {
     display: flex;
     justify-content: space-between;
     align-content: center;
     height: 50px;
 }
 
-.logo_container {
+.name__company {
     display: flex;
-    width: 250px;
-}
-
-.header_main_container img {
-    width: auto;
     align-items: center;
-    padding: 10px 0;
-}
 
-.header_main .logo_text {
-    align-self: center;
-    padding-left: 15px;
-}
 
-.logo_text>li:first-child a {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--light-color);
-}
+    & a {
+        margin: auto 0 auto 0;
+        color: var(--light-color);
+        font-weight: 700;
+        /* padding-left: 10px; */
+        font-size: 35px;
+        font-style: normal;
 
-.logo_text span {
-    color: var(--dark-color);
-    font-weight: 500
+        /* color: var(--dark-color); */
+    }
 }
 
 /* nav */
