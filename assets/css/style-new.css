@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=M PLUS 1+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+/* @import url(https: //fonts.google.com/share?selection.family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900|Roboto:wght@300;400;500;900); */
+@import url(https: //fonts.google.com/share?selection.family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900|Roboto:wght@300;400;500;900|Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400);
 
 h1,
 h2,
@@ -37,6 +39,9 @@ img {
     --blue-shadow: rgb(159, 201, 223);
     --foxy-color: rgb(240, 124, 15);
     --font-family: 'Fira Sans', sans-serif;
+    /* --font-family: 'Inter', sans-serif; */
+    /* --font-family: 'Roboto', sans-serif; */
+    /* --font-family: 'Zain', sans-serif; */
 
     /* @media screen and (max-width: 768px) {
         --container-padding-inline: 6%;
@@ -50,7 +55,7 @@ img {
 }
 
 html {
-    font-size: .8rem;
+    font-size: 16px;
     font-family: var(--font-family);
     background-color: var(--dark-background);
     color: var(--dark-color);
@@ -239,13 +244,17 @@ header {
     & a {
         margin: auto 0 auto 0;
         color: var(--light-color);
-        font-weight: 700;
-        /* padding-left: 10px; */
-        font-size: 35px;
-        font-style: normal;
-
+        font-weight: 600;
+        padding-left: 35px;
+        font-size: 30px;
+        /* font-style: italic; */
         /* color: var(--dark-color); */
     }
+
+    /* 
+    & span {
+        color: var(--foxy-color);
+    } */
 }
 
 /* nav */
