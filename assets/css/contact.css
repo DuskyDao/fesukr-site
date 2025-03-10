@@ -178,7 +178,7 @@ textarea::placeholder {
 
 .email_form form input,
 textarea,
-button[type=submit] {
+.email_form button[type=submit] {
     outline: 0;
     border: none;
     border-radius: 3px;

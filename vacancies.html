@@ -11,47 +11,59 @@
 </head>
 
 <body>
-    <!-- header social -->
-    <section class="header_top">
-        <div class="header_top_container default__container">
-            <div class="links_header">
-                <img src="assets/img/social/blue/phone.svg" alt="phone">
-                <p>Зв'яжіться з нами: <a href="tel:+380473729184">+380 4737 29184</a><a href="tel:+380995007621">+380
-                        800 509 876</a></p>
-                <img src="assets/img/social/blue/email.svg" alt="email">
-                <p>Email: <a href="mailto:reception@fesukr.com.ua">reception@fesukr.com.ua</a></p>
-            </div>
-            <ul class="social">
-                <p>Ми в соцмережах: </p>
-                <li><a href="https://www.facebook.com/fesukr"><img src="assets/img/social/default/facebook.svg"
-                            alt="facebook"></a>
-                </li>
-                <li><a href="#"><img src="assets/img/social/default/telegram.svg" alt="telegram"></a></li>
-                <li><a href="#"><img src="assets/img/social/default/viber.svg" alt="viber"></a></li>
-                <li><a href="#"><img src="assets/img/social/default/instagram.svg" alt="instagram"></a></li>
-                <li><a href="#"><img src="assets/img/social/default/youtube.svg" alt="youtube"></a></li>
-            </ul>
-        </div>
-    </section>
-    <!-- header -->
     <header>
-        <nav>
-            <div class="header_main">
-                <div class="header_main_container default__container">
-                    <div class="logo_container">
-                        <img src="assets/img/header/logo.jpg" alt="logo">
-                        <ul class="logo_text">
-                            <li><a href="index.html">LLC FES UKR</a></li>
-                            <li><a href="index.html"><span>FODD EMPIRE</span></a></li>
-                        </ul>
+        <section class="header__top">
+            <div class="header__top__container default__container">
+                <div class="logo__block">
+                    <a href="#"><img src="assets/img/icons/footer/logo-food-empire.png" alt=""></a>
+                </div>
+                <div class="header__right__block">
+                    <address class="header__address">
+                        <div class="tell__box">
+                            <p>Зв'яжіться з нами:</p>
+                            <a href="tel:+380473729184">+380 4737 29184</a>
+                            <a href="tel:+380995007621">+380 800 509 876</a>
+                        </div>
+                        <div class="mail__box">
+                            <p>Email:</p>
+                            <a href="mailto:reception@fesukr.com.ua">reception@fesukr.com.ua</a>
+                        </div>
+                    </address>
+                    <div class="social__container">
+                        <div class="social__box">
+                            <a href="">
+                                <div class="header__icons facebook__link"></div>
+                            </a>
+                            <a href="">
+                                <div class="header__icons telegram__link"></div>
+                            </a>
+                            <a href="">
+                                <div class="header__icons youtube__link"></div>
+                            </a>
+                        </div>
+                        <div class="search__box">
+                            <form method="post" action="" id="search">
+                                <input name="q" type="text" size="40" placeholder="Пошук" />
+                                <button type="submit" class="search__button"></button>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <nav class="header__nav">
+            <div class="header__main">
+                <div class="header__main_container default__container">
+                    <div class="name__company">
+                        <a href="index.html">FES UKR</a>
                     </div>
                     <ul class="nav_list">
                         <li><a href="company.html">Підприємство</a></li>
-                        <li><a href="index-new.html">Новини</a></li>
-
+                        <li><a href="news.html">Новини</a></li>
                         <li><a href="brands.html">Бренди</a></li>
                         <li><a href="products.html">Продукція</a></li>
-                        <!-- <li><a href="index.html">Команда</a></li> -->
                         <li><a href="#">Співпраця</a>
                             <ul class="sub_menu">
                                 <li><a href="suppliers.html">Постачальникам</a></li>
@@ -499,19 +511,19 @@
                 <li>
                     <p>Інфо:</p>
                     <ul>
-                        <li><a href="#">Підприємство</a></li>
-                        <li><a href="#">Бренди</a></li>
-                        <li><a href="#">Продукція</a></li>
-                        <li><a href="#">Команда</a></li>
+                        <li><a href="company.html">Підприємство</a></li>
+                        <li><a href="news.html">Новини</a></li>
+                        <li><a href="brands.html">Бренди</a></li>
+                        <li><a href="products.html">Продукція</a></li>
                         <li><a href="contact.html">Контакти</a></li>
                     </ul>
                 </li>
                 <li>
                     <p>Співпраця:</p>
                     <ul>
-                        <li><a href="#">Постачальникам</a></li>
-                        <li><a href="#">Покупцям</a></li>
-                        <li><a href="#">Ваканції</a></li>
+                        <li><a href="suppliers.html">Постачальникам</a></li>
+                        <li><a href="buyers.html">Покупцям</a></li>
+                        <li><a href="vacancies.html">Ваканції</a></li>
                     </ul>
                 </li>
                 <li>
@@ -535,17 +547,20 @@
                 </li>
                 <li>
                     <p>Ми в соцмережах: </p>
-                    <ul class="footer_social">
-                        <li><a href="https://www.facebook.com/fesukr"><img src="assets/img/social/default/facebook.svg"
-                                    alt=""></a></li>
-                        <li><a href="#"><img src="assets/img/social/default/telegram.svg" alt=""></a></li>
-                        <li><a href="#"><img src="assets/img/social/default/viber.svg" alt=""></a></li>
-                        <li><a href="#"><img src="assets/img/social/default/instagram.svg" alt=""></a></li>
-                        <li><a href="#"><img src="assets/img/social/default/youtube.svg" alt=""></a></li>
-                    </ul>
+                    <div class="footer__social__box">
+                        <a href="">
+                            <div class="foofter__icons facebook__link"></div>
+                        </a>
+                        <a href="">
+                            <div class="foofter__icons telegram__link"></div>
+                        </a>
+                        <a href="">
+                            <div class="foofter__icons youtube__link"></div>
+                        </a>
+                    </div>
                 </li>
             </ul>
-            <p>Copyright © 2024 FES UKR</p>
+            <p class="footer__copyright">Copyright © 2025 <span>FES UKR</span></p>
         </div>
     </footer>
     <!-- Скрипт який закриває всі відкриті detailes при відкритті конкретного -->
