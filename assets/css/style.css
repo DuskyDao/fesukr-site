@@ -246,14 +246,13 @@ html {
 /* header */
 .header__nav {
     position: relative;
-    z-index: 3;
+    z-index: 5;
 }
 
 .header__main {
     position: sticky;
-    background-color: var(--blue-color);
+    /* background-color: var(--blue-color); */
     width: 100%;
-    box-shadow: 0 0 5px var(--blue-shadow);
 }
 
 .header__main_container {
