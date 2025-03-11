@@ -25,19 +25,6 @@ main ul {
     }
 }
 
-/* new about */
-.about__company__wrapper {
-    display: flex;
-    gap: 20px;
-}
-
-.desc__wrapper {}
-
-.img__box {
-    width: 100%;
-    height: 500px;
-    background-color: black;
-}
 
 /* about */
 .about__vacancies {
