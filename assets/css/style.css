@@ -35,13 +35,16 @@ img {
 :root {
     --light-background: rgb(255, 255, 255);
     --dark-background: rgba(0, 0, 0, 0.04);
+    --white-blue-background: rgba(0, 130, 201, 0.14);
+
     --light-color: rgb(246, 251, 255);
     --dark-color: rgb(18, 8, 59);
     --blue-color: rgb(0, 171, 255);
     --blue-color-hover: rgb(26, 146, 206);
-    --blue-shadow: rgb(159, 201, 223);
+    --blue-shadow: rgb(125, 166, 189);
     --foxy-color: rgb(240, 124, 15);
     --food__empire__logo: #081e8e;
+    --head__gradient: linear-gradient(90.1deg, rgba(18, 8, 59, 1) 14.5%, rgba(29, 82, 110, 0.2) 135.4%);
     /* --font-family: 'Open Sans', sans-serif; */
     /* --font-family: 'Montserrat', sans-serif; */
     --font-family: 'Inter', sans-serif;
@@ -304,7 +307,7 @@ ul.nav_list>li:hover {
     display: none;
     position: absolute;
     left: 0;
-    top: 51px;
+    top: 50px;
 }
 
 .sub_menu li {
@@ -312,13 +315,13 @@ ul.nav_list>li:hover {
     display: block;
     padding: 0 10px;
     background-color: var(--blue-color);
-    border-bottom: solid 1px var(--light-color);
-    box-shadow: 0 0 5px var(--blue-shadow);
+    border-top: solid 1px var(--light-color);
+    box-shadow: 0 0 2px var(--blue-shadow);
     transition: background .3s ease;
 }
 
 .sub_menu li:last-child {
-    border-bottom: none;
+    /* border-bottom: none; */
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
