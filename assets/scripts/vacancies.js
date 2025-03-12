@@ -11,3 +11,15 @@ details.forEach((targetDetail) => {
         });
     });
 });
+
+
+document.querySelectorAll('details').forEach(detail => {
+    const content = detail.querySelector('.question__desc');
+    detail.addEventListener('toggle', () => {
+        if (detail.open) {
+            content.style.height = content.scrollHeight + 'px';
+        } else {
+            content.style.height = '0';
+        }
+    });
+});

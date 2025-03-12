@@ -6,8 +6,12 @@ main ul {
     }
 }
 
+h2 {
+    font-size: 2.5rem;
+}
+
 .tags {
-    max-width: 600px;
+    /* max-width: 600px; */
     display: flex;
     align-items: center;
     margin-top: 15px;
@@ -85,8 +89,9 @@ main ul {
     }
 }
 
-/* about */
-.about_company__wrapper {
+/* about and belief*/
+.about_company__wrapper,
+.belief_company__wrapper {
     display: flex;
     align-items: center;
     gap: 3vw;
@@ -94,12 +99,16 @@ main ul {
     text-align: right;
 }
 
+.belief_company__wrapper {
+    text-align: left;
+
+    &>.desc__wrapper>.line__blue {
+        margin: 2vw auto 2vw 0;
+    }
+}
+
 .desc__wrapper {
     width: 100%;
-
-    & h2 {
-        font-size: 3rem;
-    }
 
     & p {
         font-size: 16px;
@@ -127,19 +136,17 @@ main ul {
 .questions__section {
     margin-top: 4vw;
     background-color: var(--white-blue-background);
-    /* color: var(--dark-color); */
 }
 
 .questions__block {
-    padding: 3vw 0;
+    padding: 3vw 0 4vw 0;
 
-    & h2 {
-        font-size: 3rem;
+    &>h2 {
         text-align: center;
     }
 
     & .line__blue {
-        margin: 2vw auto 2vw auto;
+        margin: 2vw auto 1vw auto;
     }
 
     .questions__wrapper {
@@ -152,68 +159,120 @@ main ul {
 .right__block__questions {
     display: flex;
     flex-direction: column;
-    height: 10vw;
     width: 100%;
-    background-color: blueviolet;
+
+    &>details {
+        width: 100%;
+        margin-top: 1vw;
+        padding: 30px;
+        background-color: var(--light-background);
+        border-radius: 5px;
+
+        &>*:not(summary) {
+            display: block !important;
+            /* Заставляем контент всегда быть в DOM */
+        }
+    }
+}
+
+.header__questions {
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+
+    &::-webkit-details-marker {
+        display: none;
+    }
+
+    &::before {
+        content: '▶';
+        position: absolute;
+        top: 4px;
+        right: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    &>h3 {
+        font-size: 1.5rem;
+    }
+}
+
+details[open] .header__questions {
+    color: var(--blue-color);
+
+    &::before {
+        transform: rotate(90deg);
+    }
+}
+
+.question__desc {
+    margin-top: 1vw;
+    font-size: 16px;
+    overflow: hidden;
+    height: 0;
+    /* transform: scaleY(0); */
+    /* transform-origin: top; */
+    /* transition: transform .5s ease; */
+    transition: height .5s ease;
+}
+
+details[open] .question__desc {
+    /* transform: scaleY(1); */
+    height: auto;
 }
 
 /* vacancies */
 .vacancies {
     margin-top: 4vw;
-    padding-bottom: 3vw;
+    padding: 3vw 0;
+    background-color: var(--white-blue-background);
+    background-color: rgb(248, 215, 165);
 }
 
-.vacancies__core {
-    position: relative;
-    justify-content: space-between;
-    display: flex;
-    margin-top: 15px;
-    column-gap: 4vw;
-    width: 100%;
+.vacancies>.default__container>h2 {
+    text-align: center;
 }
 
-.vacancies__main {
+.vacancies>.default__container>.line__blue {
+    margin: 2vw auto 1vw auto;
+}
+
+.vacancies__wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 1216px;
+    align-items: center;
+
 }
 
 .vacancies__template {
-    &:not(:first-child) {
-        margin-top: 1vw;
-    }
+    margin-top: clamp(10px, 1vw, 1.5vw);
+    padding: clamp(10px, 1.5vw, 2vw);
+    width: 100%;
+    max-width: 1200px;
+    background-color: var(--light-color);
+    box-shadow: 0px 0px 5px var(--blue-shadow);
+    border-radius: 5px;
 }
 
 .vacancie__header {
-    background-color: var(--light-background);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* position: sticky; */
-    top: 1vw;
-    padding: 1vw;
+    flex-direction: column;
     border-radius: 3px;
-    box-shadow: 0px 0px 5px var(--blue-shadow);
     cursor: pointer;
-
-    & img {
-        width: 180px;
-        height: 180px;
-    }
 }
 
-.vacancie__desc {
+.vacancie__header {
     & p span {
         color: var(--blue-color);
     }
 
-    & h2 {
+    &>h3 {
         margin-top: 5px;
+        font-size: 1.5rem;
     }
 }
 
-.vacancie__desc .icons {
+.vacancie__header .icons {
     position: relative;
     padding-left: 25px;
     margin-top: 5px;
@@ -226,7 +285,7 @@ main ul {
     }
 }
 
-.vacancie__desc .wages {
+.vacancie__header .wages {
     display: flex;
     padding-left: 22px;
     font-size: 1.2rem;
@@ -253,7 +312,7 @@ main ul {
 
 }
 
-.vacancie__desc .vacancie__place {
+.vacancie__header .vacancie__place {
     & span {
         font-weight: 500;
         color: var(--dark-color);
@@ -266,7 +325,7 @@ main ul {
     }
 }
 
-.vacancie__desc .vacancie__mode {
+.vacancie__header .vacancie__mode {
     font-weight: 500;
 
     &.icons::before {
@@ -276,7 +335,7 @@ main ul {
     }
 }
 
-.vacancie__desc .vacancie__yes {
+.vacancie__header .vacancie__yes {
     font-weight: 500;
     margin-top: 6px;
 
@@ -289,9 +348,6 @@ main ul {
 
 /* content */
 .vacancie__content {
-    margin: 0 35px;
-    padding: 0 0;
-    border-radius: 3px;
 
     & h3 {
         margin-top: 10px;
