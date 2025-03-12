@@ -251,7 +251,7 @@ html {
 
 .header__main {
     position: sticky;
-    /* background-color: var(--blue-color); */
+    background-color: var(--blue-color);
     width: 100%;
 }
 
