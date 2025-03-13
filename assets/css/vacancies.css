@@ -333,6 +333,7 @@ details[open] .question__desc {
     font-weight: 500;
 
     &.icons::before {
+        top: -1px;
         width: 17px;
         height: 17px;
         background: url(../img/icons/vacancies/calendar.svg) center center /cover no-repeat;
@@ -344,6 +345,7 @@ details[open] .question__desc {
     margin-top: 6px;
 
     &.icons::before {
+        top: -1px;
         width: 18px;
         height: 18px;
         background: url(../img/icons/vacancies/yes.svg) center center /cover no-repeat;
@@ -352,16 +354,16 @@ details[open] .question__desc {
 
 /* content */
 .vacancie__content {
+    font-size: clamp(14px, 2vw, 15px);
 
     & h3 {
         margin-top: 15px;
         text-indent: 1.3em;
+        font-size: clamp(16px, 2vw, 1.3rem);
     }
 
     & p {
         margin-top: 15px;
-        font-size: 1.2rem;
-        font-weight: 500;
     }
 
     & li:first-child {
@@ -370,6 +372,7 @@ details[open] .question__desc {
 
     & a {
         color: var(--dark-color);
+        font-weight: 600;
 
         &:hover {
             color: var(--blue-color);

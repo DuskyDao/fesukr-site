@@ -67,6 +67,7 @@ html {
     font-family: var(--font-family);
     background-color: var(--dark-background);
     color: var(--dark-color);
+    scroll-behavior: smooth;
 }
 
 .default__container {
