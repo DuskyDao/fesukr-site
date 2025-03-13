@@ -340,7 +340,6 @@ footer {
     z-index: 3;
     background-color: var(--blue-color);
     width: 100%;
-    box-shadow: 0 0 10px var(--blue-shadow);
 }
 
 .footer_info {

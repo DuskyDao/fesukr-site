@@ -7,7 +7,8 @@ main ul {
 }
 
 h2 {
-    font-size: 2.5rem;
+    /* font-size: 2.5rem; */
+    font-size: clamp(22px, 4vw, 2.5rem);
 }
 
 .tags {
@@ -68,7 +69,7 @@ h2 {
         margin-bottom: 10px;
     }
 
-    & a {
+    &>a {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -151,7 +152,9 @@ h2 {
 
     .questions__wrapper {
         display: flex;
+        justify-content: center;
         gap: 2vw;
+        /* flex-wrap: wrap; */
     }
 }
 
@@ -162,9 +165,9 @@ h2 {
     width: 100%;
 
     &>details {
-        width: 100%;
+        max-width: 100%;
         margin-top: 1vw;
-        padding: 30px;
+        padding: clamp(10px, 2vw, 30px);
         background-color: var(--light-background);
         border-radius: 5px;
 
@@ -193,7 +196,9 @@ h2 {
     }
 
     &>h3 {
-        font-size: 1.5rem;
+        /* display: inline-block; */
+        max-width: 90%;
+        font-size: clamp(16px, 2vw, 1.5rem);
     }
 }
 
@@ -207,7 +212,7 @@ details[open] .header__questions {
 
 .question__desc {
     margin-top: 1vw;
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 1.2rem);
     overflow: hidden;
     height: 0;
     /* transform: scaleY(0); */
@@ -349,7 +354,7 @@ details[open] .question__desc {
 .vacancie__content {
 
     & h3 {
-        margin-top: 10px;
+        margin-top: 15px;
         text-indent: 1.3em;
     }
 
@@ -372,59 +377,39 @@ details[open] .question__desc {
     }
 }
 
-/* vacancies__bottom */
-.vacancies__bottom p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    /* text-indent: 2em; */
+/* last__question */
+.last__question__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3vw 5% 3vw 5%;
+    text-align: center;
 
-    &:first-child {
+    &>.line__blue {
+        margin: 2vw auto 2vw auto;
+    }
+
+    &>p {
+        font-size: clamp(16px, 2vw, 1.5rem);
+    }
+
+    .btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         margin-top: 3vw;
-    }
-}
+        padding: auto;
+        width: 200px;
+        height: 45px;
+        background-color: var(--blue-color);
+        color: var(--light-color);
+        border-radius: 3px;
+        transition: all .3s ease;
 
-/* aside */
-.vacancies__aside {
-    width: 400px;
-    min-width: 300px;
-    height: 100%;
-    position: sticky;
-    top: 1vw;
-    padding: 20px;
-    background-color: var(--light-background);
-    border-radius: 3px;
-    box-shadow: 0px 0px 5px var(--blue-shadow);
-    font-size: clamp(0.8rem, 1.1vw, 1.1rem);
-
-    &>p:nth-child(2) {
-        margin-top: 10px;
-    }
-
-    & address {
-        margin-top: 10px;
-        font-style: normal;
-
-        &>p>a {
-            color: var(--blue-color);
-            font-weight: 500;
-        }
-
-        &>p>span {
+        &:hover {
+            background-color: var(--blue-hover);
             color: var(--dark-color);
-        }
-
-        &>p:nth-child(3) {
-            margin-top: 10px;
+            border: solid 1px var(--blue-color);
         }
     }
-
-    & h3 {
-        margin-top: 10px;
-    }
-
-    & span {
-        font-weight: 500;
-        color: var(--blue-color);
-    }
-
 }
