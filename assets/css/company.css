@@ -83,7 +83,7 @@
     }
 }
 
-/* при вібранной вкладке включает заданую страницу */
+/* при выбранной вкладке включает заданую страницу */
 #tab1:checked~.content-container #content1,
 #tab2:checked~.content-container #content2,
 #tab3:checked~.content-container #content3,
@@ -92,4 +92,10 @@
 #tab6:checked~.content-container #content6,
 #tab7:checked~.content-container #content7 {
     display: block;
+}
+
+#content3.tab-content {
+    & h3:nth-child(3) {
+        color: blue;
+    }
 }
