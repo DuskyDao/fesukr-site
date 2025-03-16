@@ -1,0 +1,124 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #e6f0fa;
+}
+
+/* бокс */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Вертикальная линия */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #ccc 50%, transparent 50%);
+    background-size: 2px 10px;
+    transform: translateX(-50%);
+}
+
+/* Заголовок */
+.main-title {
+    color: #ff6200;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+/* описание */
+.main-desc {
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+/* Элемент временной шкалы */
+.timeline-item {
+    position: relative;
+    margin: 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Год (точка на линии) */
+.year {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: #326496;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    z-index: 1;
+}
+
+/* Текстовый блок */
+.content {
+    width: 45%;
+    padding: 15px 15px 50px 15px;
+    border-radius: 10px;
+    color: white;
+    position: relative;
+    /* box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); */
+    /* Добавляем тень для эффекта */
+}
+
+/* Правый блок */
+.content.right {
+    position: relative;
+    margin-left: 55%;
+    background: linear-gradient(to bottom, #326496, #4a7bb5);
+    border-radius: -10px 10px 10px 0;
+
+    /* Обратный радиус внизу справа */
+    &::before {
+        position: absolute;
+        content: '';
+        width: 100%;
+        height: 30px;
+        border-radius: 70px 0 0 0;
+        background-color: #e6f0fa;
+        bottom: 0;
+        left: 0;
+        box-shadow: none;
+
+    }
+}
+
+/* Левый блок */
+.content.left {
+    margin-right: 55%;
+    background: linear-gradient(to bottom, #326496, #4a7bb5);
+    border-radius: 10px 10px 10px 0;
+    /* Обратный радиус внизу слева */
+}
+
+/* Оранжевый блок */
+.content.orange {
+    background: linear-gradient(to bottom, #ff6200, #ff8c4b);
+    border-radius: 10px 10px 0 10px;
+    /* Для правого блока */
+}
+
+/* Текст внутри блоков */
+.content h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+}
+
+.content p {
+    margin: 0;
+    font-size: 0.9rem;
+}

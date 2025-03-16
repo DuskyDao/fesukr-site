@@ -121,6 +121,11 @@ ul.history__wrapper {
         width: 20px;
         top: 15px;
         left: -40px;
+    }
 
+    & .history__date {
+        position: absolute;
+        top: 15px;
+        left: -60px;
     }
 }
