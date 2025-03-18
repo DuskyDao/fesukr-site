@@ -39,6 +39,9 @@ body {
     margin-bottom: 40px;
 }
 
+
+
+
 /* Элемент временной шкалы */
 .timeline-item {
     position: relative;
@@ -79,7 +82,7 @@ body {
 .content.right {
     position: relative;
     margin-left: 55%;
-    background: linear-gradient(to bottom, #326496, #4a7bb5);
+    background: linear-gradient(to bottom, var(--blue-color-hover), rgb(0, 171, 255));
     border-radius: -10px 10px 10px 0;
 
     /* Обратный радиус внизу справа */
@@ -100,7 +103,7 @@ body {
 /* Левый блок */
 .content.left {
     margin-right: 55%;
-    background: linear-gradient(to bottom, #326496, #4a7bb5);
+    background: linear-gradient(to bottom, rgb(0, 171, 255), var(--blue-color-hover));
     border-radius: 10px 10px 10px 0;
     /* Обратный радиус внизу слева */
 }
