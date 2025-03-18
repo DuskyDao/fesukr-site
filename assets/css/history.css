@@ -20,8 +20,7 @@
 .history__container {
     position: relative;
     display: flex;
-    margin: 4vw 0;
-    gap: 60px;
+    margin: 4vw 0 8vw 0;
 
     /* Вертикальная линия */
     &::before {
@@ -37,57 +36,67 @@
     }
 }
 
-.history__left__wrapper,
-.history__right__wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-}
-
-.history__right__wrapper {
-    padding-top: 300px;
-}
-
 .history__box {
     position: relative;
     list-style: none;
-    margin-top: 5vw;
-    padding: 2vw;
-    background: linear-gradient(to bottom, var(--blue-color-hover), rgb(0, 171, 255));
-    border-radius: 5px 5px 5px 0;
-    color: var(--light-color);
 
-    &::before {
+    /* bal */
+    &:not(:first-child)::before {
         position: absolute;
         display: block;
         content: '';
         border-radius: 50%;
+        transform: translateX(-50%);
         background-color: var(--blue-color);
-        height: 20px;
-        width: 20px;
-        bottom: -30px;
-        left: -40px;
+        height: 30px;
+        width: 30px;
+        bottom: -70px;
+        left: 50%;
+    }
+}
+
+.history__desc {
+    position: relative;
+    height: 100%;
+    padding: 2vw;
+    color: var(--light-color);
+    background: linear-gradient(to bottom, var(--blue-color-hover), var(--blue-color));
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+
+    &>h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 15px;
     }
 
-    /* 
-    & .history__date {
-        position: absolute;
-        top: 15px;
-        left: -60px;
-    } */
+    &>p {
+        font-size: 16px;
+    }
 }
 
-/* .history__box.right {
-    position: relative;
+.history__date {
+    position: absolute;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--blue-color);
+    bottom: -65px;
+}
+
+.history__desc.right {
     margin-left: 55%;
-    background: linear-gradient(to bottom, var(--blue-color-hover), rgb(0, 171, 255));
-    border-radius: -10px 10px 10px 0;
+    border-radius: 10px 10px 10px 0;
+
+    &>.history__date {
+        left: -30px;
+        /* bottom: -30px; */
+    }
 }
 
-.history__box.left {
+.history__desc.left {
     margin-right: 55%;
-    background: linear-gradient(to bottom, rgb(0, 171, 255), var(--blue-color-hover));
-    border-radius: 10px 10px 10px 0;
-} */
+    border-radius: 10px 10px 0 10px;
+
+    &>.history__date {
+        right: -30px;
+    }
+}
