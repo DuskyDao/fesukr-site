@@ -82,7 +82,7 @@ body {
 .content.right {
     position: relative;
     margin-left: 55%;
-    background: linear-gradient(to bottom, var(--blue-color-hover), rgb(0, 171, 255));
+    background: linear-gradient(to bottom, var(--blue-color-hover), var(--blue-color));
     border-radius: -10px 10px 10px 0;
 
     /* Обратный радиус внизу справа */
@@ -103,7 +103,7 @@ body {
 /* Левый блок */
 .content.left {
     margin-right: 55%;
-    background: linear-gradient(to bottom, rgb(0, 171, 255), var(--blue-color-hover));
+    background: linear-gradient(to bottom, rgb(0, 171, 255), var(--blue-color));
     border-radius: 10px 10px 10px 0;
     /* Обратный радиус внизу слева */
 }
