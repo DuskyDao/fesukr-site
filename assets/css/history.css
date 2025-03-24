@@ -71,8 +71,10 @@
 
     &>h3 {
         font-size: 1.3rem;
-        font-weight: 600;
+        font-weight: 500;
         margin-bottom: 15px;
+        text-transform: uppercase;
+        color: var(--light-color);
     }
 
     &>p {
@@ -84,7 +86,7 @@
 
 .history__date {
     position: absolute;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--blue-color);
     bottom: -93px;

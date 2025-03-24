@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=M PLUS 1+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=M PLUS 1+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url(https://fonts.google.com/share?selection.family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900|Roboto:wght@300;400;500;900);
 /* @import url(https: //fonts.google.com/share?selection.family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900|Roboto:wght@300;400;500;900|Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400); */
 /* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap'); */
@@ -40,6 +40,7 @@ img {
     --light-color: rgb(246, 251, 255);
     --dark-color: rgb(18, 8, 59);
     --blue-color: rgb(0, 171, 255);
+    /* --blue-color: #0097d6; */
     --blue-color-hover: rgb(26, 146, 206);
     --blue-shadow: rgb(125, 166, 189);
     --foxy-color: rgb(240, 124, 15);
@@ -353,8 +354,7 @@ footer {
     & a,
     li {
         color: var(--dark-color);
-        font-weight: 500;
-        font-size: 14px;
+        font-size: 15px;
         transition: color .3s ease;
 
         &:hover {
@@ -365,7 +365,7 @@ footer {
     & p {
         margin-top: 15px;
         color: var(--light-color);
-        font-size: 15px;
+        font-size: 16px;
         line-height: 20px;
     }
 }
