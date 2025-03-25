@@ -48,8 +48,7 @@
     font-size: 1.1rem;
 
     &>h2 {
-        text-indent: 4rem;
-        color: var(--blue-color);
+        /* color: var(--blue-color); */
     }
 
     & h3 {
@@ -94,10 +93,10 @@
     display: block;
 }
 
-#content2.tab-content>h2 {
+/* #content2.tab-content>h2 {
     text-align: center;
     color: var(--dark-color);
-}
+} */
 
 /* history */
 ul.history__wrapper {
