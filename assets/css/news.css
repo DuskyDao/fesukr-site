@@ -85,6 +85,7 @@
 
     & h3 {
         text-align: center;
+        color: var(--dark-color);
     }
 
     .post__desc {
