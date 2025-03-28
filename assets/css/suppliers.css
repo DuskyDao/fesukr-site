@@ -2,7 +2,7 @@ main ul,
 main ol {
   list-style: inside;
   margin-left: 10px;
-  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  font-size: clamp(14px, 1.5vw, 1rem);
 
   & li::marker {
     color: var(--blue-color);
@@ -21,7 +21,7 @@ main ol {
   }
 
   & p {
-    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    font-size: clamp(14px, 1.5vw, 1rem);
   }
 }
 
@@ -50,7 +50,7 @@ main ol {
 
   h3 {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-bottom: 0.8vw;
   }
 

@@ -8,7 +8,7 @@ main ul {
 
 h2 {
     /* font-size: 2.5rem; */
-    font-size: clamp(22px, 4vw, 2.5rem);
+    font-size: clamp(22px, 4vw, 2.3rem);
 }
 
 .tags {
@@ -23,7 +23,7 @@ h2 {
     & li {
         background-color: var(--blue-color);
         border-radius: 30px;
-        padding: 5px 10px;
+        padding: 6px 15px;
         font-size: 0.8rem;
         font-weight: 500;
         color: var(--light-color);
@@ -111,10 +111,6 @@ h2 {
 .desc__wrapper {
     width: 100%;
 
-    & p {
-        font-size: 16px;
-    }
-
     & p:not(:first-child) {
         margin-top: 15px;
     }
@@ -167,7 +163,7 @@ h2 {
     &>details {
         max-width: 100%;
         margin-top: 1vw;
-        padding: clamp(10px, 2vw, 30px);
+        /* padding: clamp(10px, 2vw, 30px); */
         background-color: var(--light-background);
         border-radius: 5px;
 
@@ -182,6 +178,7 @@ h2 {
     cursor: pointer;
     list-style: none;
     position: relative;
+    padding: clamp(10px, 2vw, 30px);
 
     &::-webkit-details-marker {
         display: none;
@@ -190,15 +187,14 @@ h2 {
     &::before {
         content: '▶';
         position: absolute;
-        top: 4px;
-        right: 10px;
+        top: 40%;
+        right: clamp(15px, 2vw, 25px);
         transition: transform 0.3s ease;
     }
 
     &>h3 {
-        /* display: inline-block; */
         max-width: 90%;
-        font-size: clamp(16px, 2vw, 1.5rem);
+        font-weight: 500;
     }
 }
 
@@ -211,10 +207,11 @@ details[open] .header__questions {
 }
 
 .question__desc {
-    margin-top: 1vw;
-    font-size: clamp(14px, 2vw, 1.2rem);
+    font-size: clamp(14px, 1rem, 1rem);
     overflow: hidden;
     height: 0;
+    padding: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 30px);
+    padding-top: 0;
     /* transform: scaleY(0); */
     /* transform-origin: top; */
     /* transition: transform .5s ease; */
@@ -266,13 +263,18 @@ details[open] .question__desc {
 }
 
 .vacancie__header {
+    & p {
+        font-size: 15px;
+        /* font-weight: 500; */
+    }
+
     & p span {
         color: var(--blue-color);
     }
 
     &>h3 {
-        margin-top: 5px;
-        font-size: 1.5rem;
+        /* margin-top: 5px; */
+        font-size: 1.1rem;
     }
 }
 
@@ -292,7 +294,7 @@ details[open] .question__desc {
 .vacancie__header .wages {
     display: flex;
     padding-left: 22px;
-    font-size: 1.2rem;
+    margin-top: 8px;
 
     &.icons::before {
         width: 20px;
@@ -302,12 +304,12 @@ details[open] .question__desc {
 
     & .wages__cash {
         margin: 0 5px;
-        font-weight: 600;
+        font-weight: 500;
         color: var(--foxy-color);
     }
 
     & .wages__uah {
-        font-weight: 600;
+        font-weight: 500;
     }
 
     & .wages__desc {
@@ -318,7 +320,6 @@ details[open] .question__desc {
 
 .vacancie__header .vacancie__place {
     & span {
-        font-weight: 500;
         color: var(--dark-color);
     }
 
@@ -330,7 +331,6 @@ details[open] .question__desc {
 }
 
 .vacancie__header .vacancie__mode {
-    font-weight: 500;
 
     &.icons::before {
         top: -1px;
@@ -341,7 +341,6 @@ details[open] .question__desc {
 }
 
 .vacancie__header .vacancie__yes {
-    font-weight: 500;
     margin-top: 6px;
 
     &.icons::before {
@@ -354,12 +353,12 @@ details[open] .question__desc {
 
 /* content */
 .vacancie__content {
-    font-size: clamp(14px, 2vw, 15px);
+    font-size: clamp(14px, 15px, 16px);
 
     & h3 {
         margin-top: 15px;
         text-indent: 1.3em;
-        font-size: clamp(16px, 2vw, 1.3rem);
+        font-size: clamp(16px, 1.1rem, 1.3rem);
     }
 
     & p {

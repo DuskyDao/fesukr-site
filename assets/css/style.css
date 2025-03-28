@@ -13,6 +13,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 h1,
 h2,
@@ -54,11 +55,11 @@ img {
     --white-blue-background: rgba(0, 130, 201, 0.14);
 
     --light-color: rgb(246, 251, 255);
-    --dark-color: rgb(18, 8, 59);
+    --dark-color: rgb(44, 35, 80);
     --foxy-color: rgb(240, 124, 15);
     --food__empire__logo: #081e8e;
     --blue-color: rgb(0, 171, 255);
-    /* --blue-color: #0097d6; */
+    --blue-color: #0097d6;
 
     --blue-color-hover: rgb(26, 146, 206);
 
@@ -67,21 +68,19 @@ img {
 
     /* --font-family: 'Open Sans', sans-serif; */
     /* --font-family: 'Inter', sans-serif; */
-    /* --font-family: "Roboto", sans-serif; */
+    --font-family: "Roboto", sans-serif;
     /* --font-family: "Source Sans 3", sans-serif; */
     /* --font-family: "Montserrat", sans-serif; */
     /* --font-family: "Noto Sans", sans-serif; */
     /* --font-family: "Fira Sans Condensed", sans-serif; */
     /* --font-family: "Poppins", sans-serif; */
-    --font-family: "Lato", sans-serif;
-
-
+    /* --font-family: "Lato", sans-serif; */
+    /* --font-family: "Ubuntu", sans-serif; */
 
     /* --font-family: 'Lora', serif; */
     /* --font-family: "Merriweather", serif; */
     /* --font-family: "Source Serif 4", serif; */
     /* --font-family: "Libre Baskerville", serif; */
-
 
     /* --font-family: "PT Serif", serif; */
 
@@ -150,7 +149,6 @@ html {
     justify-content: end;
     font-style: normal;
     height: 25px;
-    /* font-weight: 500; */
     font-size: 14px;
 }
 
@@ -159,6 +157,7 @@ html {
     display: flex;
     position: relative;
     align-items: end;
+    font-weight: 500;
 
     &::before {
         position: absolute;
@@ -309,7 +308,7 @@ html {
         color: var(--light-color);
         font-weight: 400;
         padding-left: 35px;
-        font-size: 30px;
+        font-size: 1.5rem;
     }
 }
 
@@ -332,7 +331,7 @@ ul.nav_list>li:hover {
 
 .nav_list li a {
     display: inline-block;
-    font-size: 1.3rem;
+    font-size: 1.05rem;
     line-height: 50px;
     padding: 0 10px;
     color: var(--light-color);
@@ -356,7 +355,6 @@ ul.nav_list>li:hover {
 }
 
 .sub_menu li:last-child {
-    /* border-bottom: none; */
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
 }
@@ -387,7 +385,9 @@ footer {
     & a,
     li {
         color: var(--dark-color);
-        font-size: 15px;
+        /* color: var(--light-color); */
+        font-size: 14px;
+        font-weight: 500;
         transition: color .3s ease;
 
         &:hover {
@@ -396,10 +396,14 @@ footer {
     }
 
     & p {
-        margin-top: 15px;
+        margin-top: 20px;
+        margin-bottom: 10px;
         color: var(--light-color);
-        font-size: 16px;
-        line-height: 20px;
+        /* color: var(--dark-color); */
+        font-size: 20px;
+        /* line-height: 20px; */
+        font-family: Oswald;
+        /* font-weight: 300; */
     }
 }
 
