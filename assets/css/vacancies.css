@@ -7,7 +7,6 @@ main ul {
 }
 
 h2 {
-    /* font-size: 2.5rem; */
     font-size: clamp(22px, 4vw, 2.3rem);
 }
 
@@ -43,8 +42,6 @@ h2 {
     position: relative;
     width: 100%;
     height: 400px;
-    color: var(--light-background);
-    font-size: 17px;
 }
 
 .photo__head__section {
@@ -62,25 +59,19 @@ h2 {
     flex-direction: column;
     justify-content: end;
     height: 400px;
+    color: var(--light-color);
     z-index: 4;
 
-    & h1 {
+    &>h1 {
         font-size: 4rem;
         margin-bottom: 10px;
+        color: var(--light-color);
     }
 
     &>a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         margin: 3vw 0 3vw 0;
-        padding: auto;
-        width: 200px;
-        height: 45px;
         background-color: var(--light-background);
         color: var(--dark-color);
-        border-radius: 3px;
-        transition: all .3s ease;
 
         &:hover {
             background-color: var(--blue-hover);
@@ -122,7 +113,7 @@ h2 {
     img {
         height: 23vw;
         width: 100%;
-        border-radius: 3px;
+        border-radius: 5px;
         object-fit: cover;
         object-position: center;
 
@@ -163,7 +154,6 @@ h2 {
     &>details {
         max-width: 100%;
         margin-top: 1vw;
-        /* padding: clamp(10px, 2vw, 30px); */
         background-color: var(--light-background);
         border-radius: 5px;
 
@@ -190,6 +180,7 @@ h2 {
         top: 40%;
         right: clamp(15px, 2vw, 25px);
         transition: transform 0.3s ease;
+        color: var(--dark-color);
     }
 
     &>h3 {
@@ -199,10 +190,13 @@ h2 {
 }
 
 details[open] .header__questions {
-    color: var(--blue-color);
+    &>h3 {
+        color: var(--blue-color);
+    }
 
     &::before {
         transform: rotate(90deg);
+        color: var(--blue-color);
     }
 }
 
@@ -212,14 +206,10 @@ details[open] .header__questions {
     height: 0;
     padding: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 30px);
     padding-top: 0;
-    /* transform: scaleY(0); */
-    /* transform-origin: top; */
-    /* transition: transform .5s ease; */
     transition: height .5s ease;
 }
 
 details[open] .question__desc {
-    /* transform: scaleY(1); */
     height: auto;
 }
 
@@ -258,14 +248,12 @@ details[open] .question__desc {
 .vacancie__header {
     display: flex;
     flex-direction: column;
-    border-radius: 3px;
     cursor: pointer;
 }
 
 .vacancie__header {
-    & p {
+    &>p {
         font-size: 15px;
-        /* font-weight: 500; */
     }
 
     & p span {
@@ -273,7 +261,7 @@ details[open] .question__desc {
     }
 
     &>h3 {
-        /* margin-top: 5px; */
+        line-height: 1.5;
         font-size: 1.1rem;
     }
 }
@@ -392,21 +380,14 @@ details[open] .question__desc {
     }
 
     &>p {
-        font-size: clamp(16px, 2vw, 1.5rem);
+        font-size: clamp(14px, 2vw, 1.3rem);
     }
 
-    .btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    &>a {
         margin-top: 3vw;
-        padding: auto;
-        width: 200px;
-        height: 45px;
         background-color: var(--blue-color);
         color: var(--light-color);
-        border-radius: 3px;
-        transition: all .3s ease;
+        box-shadow: 0px 0px 5px var(--blue-shadow);
 
         &:hover {
             background-color: var(--blue-hover);
