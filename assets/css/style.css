@@ -67,6 +67,12 @@ img {
     transition: all .4s ease;
 }
 
+.title {
+    margin-top: 4vw;
+    font-size: clamp(1.2rem, 2vw, 2.5rem);
+    text-align: center;
+}
+
 :root {
     --light-background: rgb(255, 255, 255);
     --dark-background: rgba(0, 0, 0, 0.04);
@@ -438,7 +444,8 @@ footer {
     width: 100%;
 
     &>a {
-        margin: .8vw 1vw .8vw 0;
+        /* margin: .8vw 1vw .8vw 0; */
+        margin-right: 10px;
         box-shadow: 0 0 2px var(--blue-shadow);
 
     }
@@ -468,7 +475,7 @@ footer {
 
 .footer__copyright {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     font-size: .9rem;
     font-weight: 500;
 
