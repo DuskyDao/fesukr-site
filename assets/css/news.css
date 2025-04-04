@@ -43,7 +43,7 @@
 }
 
 .news__box:hover {
-    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
     & .date__news {
         background: var(--foxy-color);
