@@ -73,6 +73,14 @@ img {
     text-align: center;
 }
 
+.line__blue {
+    display: block;
+    width: 6vw;
+    height: 3px;
+    margin: 2vw 0 2vw auto;
+    background-color: var(--blue-color);
+}
+
 :root {
     --light-background: rgb(255, 255, 255);
     --dark-background: rgba(0, 0, 0, 0.04);

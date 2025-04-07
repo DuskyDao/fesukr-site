@@ -29,13 +29,7 @@ h2 {
     }
 }
 
-.line__blue {
-    display: block;
-    width: 6vw;
-    height: 3px;
-    margin: 2vw 0 2vw auto;
-    background-color: var(--blue-color);
-}
+
 
 /* h1 section */
 .h1__section {
