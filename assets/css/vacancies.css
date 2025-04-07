@@ -54,7 +54,7 @@ h2 {
 }
 
 .vacancies_head__wrapper {
-    position: relative;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: end;

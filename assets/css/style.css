@@ -90,6 +90,7 @@ img {
 
     --blue-shadow: rgb(125, 166, 189);
     --head__gradient: linear-gradient(90.1deg, rgba(18, 8, 59, 1) 14.5%, rgba(29, 82, 110, 0.2) 135.4%);
+    /* --head__gradient: linear-gradient(90.1deg, var(--blue-color) 14.5%, rgba(29, 82, 110, 0) 135.4%); */
 
     /* --font-family: 'Open Sans', sans-serif; */
     /* --font-family: 'Inter', sans-serif; */
