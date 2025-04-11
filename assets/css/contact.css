@@ -1,6 +1,6 @@
 .contact__header__section {
     position: relative;
-    height: clamp(250px, 20vw, 20vw);
+    height: 380px;
     overflow: hidden;
 }
 
@@ -30,7 +30,7 @@
     height: 100%;
     flex-direction: column;
     justify-content: end;
-    padding: 0 2vw 4vw 0;
+    padding: 0 5vw 3vw 0;
     color: var(--light-color);
     z-index: 2;
 
@@ -49,9 +49,9 @@
 /* contact + form */
 .contact_box {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
-    gap: 4vw;
+    gap: 5vw;
 
 }
 
@@ -93,7 +93,6 @@
 .form__container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     margin-top: 4vw;
     padding: 0 4vw;
@@ -103,58 +102,81 @@
     /* color: var(--light-color); */
 
     &>h2 {
-        margin-top: 0;
-        color: inherit;
+        margin-top: 2.5vw;
+        font-size: 2.5rem;
         color: var(--light-color);
+    }
+
+    p {
+        margin-top: 10px;
+        color: var(--dark-color);
     }
 }
 
 .form__container form {
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    align-items: center;
 }
 
-.form__container form>label {
-    margin-top: 10px;
-}
-
-.form__container form>input {
-    height: 42px;
+.form__container form .input__wrapper {
+    position: relative;
+    margin-top: 20px;
     width: 425px;
-    padding-left: 10px;
-    background-color: aliceblue;
+}
+
+.form__container form input {
+    height: 42px;
+    width: 100%;
+    padding: 0 10px 0 40px;
+}
+
+.form__container form .input__wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+}
+
+
+.form__container form .input__wrapper:nth-child(1):before {
+    background: url('../img/icons/contact/user.svg') center center / contain no-repeat;
+}
+
+.form__container form .input__wrapper:nth-child(2):before {
+    /* top: 54%; */
+    background: url('../img/icons/contact/email.svg') center center / contain no-repeat;
+}
+
+.form__container form .input__wrapper:nth-child(3):before {
+    background: url('../img/icons/contact/subject.svg') center center / contain no-repeat;
 }
 
 .form__container textarea {
+    width: 425px;
+    margin-top: 20px;
     resize: none;
-    padding: 10px;
-}
-
-.form__container form input::placeholder,
-textarea::placeholder {
-    opacity: .6;
-    color: var(--dark-color);
+    padding: 10px 10px 10px 15px;
 }
 
 .form__container form input,
-textarea,
+.form__container textarea,
 .form__container button[type=submit] {
-    outline: 0;
+    outline: 2px;
     border: none;
     border-radius: 5px;
-    /* color: var(--light-color); */
+    color: var(--dark-color-back);
+    /* color: var(--dark-color); */
 }
 
 
 .form__container form>button[type=submit] {
+    margin: 10% 0;
     background-color: var(--dark-color);
-    margin: 2vw auto 2vw auto;
-    /* text-align: center; */
-    /* font-size: 20px; */
-    /* font-weight: 600; */
-    /* width: 225px; */
-    /* height: 42px; */
+    background-color: var(--foxy-color);
     color: var(--light-color);
     cursor: pointer;
 }
@@ -163,7 +185,6 @@ textarea,
     background-color: var(--blue-color);
     color: antiquewhite;
     border: solid 2px var(--light-color);
-    /* box-shadow: 0 0 5px 0px var(--blue-shadow); */
 }
 
 /* map */
@@ -185,17 +206,7 @@ textarea,
 }
 
 /* /anime map*/
-
-.contact_map p {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    padding: 20px 0;
-    opacity: .9;
-}
-
 .contact_map iframe {
-
-    /* background-color: aliceblue; */
-    opacity: .9.5;
+    margin-top: 20px;
+    /* opacity: .95; */
 }

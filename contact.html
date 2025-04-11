@@ -98,6 +98,7 @@
                 <ul class="contact_box">
                     <ol class="contact_text">
                         <h2 class="title">ТОВ "ФЕС УКР"</h2>
+
                         <h3>Адреса:</h3>
                         <address>Черкаська обл., м Золотоноша, вул .Шевченка 235 А</address>
                         <h3>Телефони:</h3>
@@ -124,17 +125,23 @@
                     </ol>
                     <ol class="form__container">
                         <h2 class="title">Напишіть нам</h2>
-                        <p>Ми обов'язково допоможемо Вам!</p>
+                        <p>Ми обов'язково Вам допоможемо!</p>
                         <form action="#">
-                            <label for="name">Ваше ім'я</label>
-                            <input type="text" name="name" placeholder="Джон Сноу">
-                            <label for="email">Ваш Email</label>
-                            <input type="text" name="email" placeholder="example@gmail.com">
-                            <label for="theme">Тема листа</label>
-                            <input type="text" name="theme" placeholder="Відгук про продукцію">
-                            <label for="message">Повідомлення</label>
+                            <div class="input__wrapper">
+                                <label class="sr-only" for="name">Ваше ім'я</label>
+                                <input type="text" name="name" placeholder="Як до Вас звертатись?">
+                            </div>
+                            <div class="input__wrapper">
+                                <label class="sr-only" for="email">Email</label>
+                                <input type="text" name="email" placeholder="Ваш Email">
+                            </div>
+                            <div class="input__wrapper">
+                                <label class="sr-only" for="theme">Тема листа</label>
+                                <input type="text" name="theme" placeholder="Тема листа">
+                            </div>
+                            <label class="sr-only" for="message">Повідомлення</label>
                             <textarea type="text" name="message" rows="10" cols="3"
-                                placeholder="Напишіть ваше повідомлення"></textarea>
+                                placeholder="Повідомлення"></textarea>
                             <button class="btn" type="submit">Надіслати</button>
                         </form>
                     </ol>
@@ -144,6 +151,7 @@
         <!-- блок с картой -->
         <div class="contact_map">
             <h2 class="title">Ми на мапі</h2>
+
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10326.835734770757!2d32.0203064!3d49.6786212!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d6a602d215fe1b%3A0xda863a7f3c4b1ece!2z0KLQntCSICLQpNCV0KEg0KPQmtCgIg!5e0!3m2!1sru!2sua!4v1702479245178!5m2!1sru!2sua"
                 width="100%" height="500px" style="border:0;" allowfullscreen="" loading="lazy"
