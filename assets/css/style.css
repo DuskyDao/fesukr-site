@@ -373,7 +373,7 @@ html {
 
 ul.nav_list li.active,
 ul.nav_list>li:hover {
-    background-color: #0c85b9;
+    /* background-color: #0c85b9; */
 }
 
 .nav_list li a {
