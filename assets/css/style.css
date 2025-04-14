@@ -384,6 +384,23 @@ ul.nav_list>li:hover {
     color: var(--light-color);
 }
 
+.nav_list li a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: var(--light-color);
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+.nav_list li a:hover::before {
+    width: 100%;
+}
+
 .sub_menu {
     display: none;
     position: absolute;
