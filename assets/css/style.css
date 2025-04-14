@@ -373,31 +373,34 @@ html {
 
 ul.nav_list li.active,
 ul.nav_list>li:hover {
-    /* background-color: #081e8e; */
+    background-color: #0c85b9;
 }
 
 .nav_list li a {
     display: inline-block;
+    position: relative;
     font-size: 1.05rem;
     line-height: 50px;
     padding: 0 10px;
     color: var(--light-color);
 }
 
-.nav_list>li>a::before {
+.nav_list>li>a::before,
+.sub_menu>li>a::before {
     position: absolute;
     display: block;
     height: 2px;
     width: 0%;
     content: '';
     background-color: var(--light-color);
-    border-radius: 5px;
+    border-radius: 3px;
     bottom: 20%;
 
     transition: all ease-in-out 450ms;
 }
 
-.nav_list li a:hover::before {
+.nav_list>li>a:hover::before,
+.sub_menu>li>a:hover::before {
     width: 60%;
 }
 
@@ -409,6 +412,7 @@ ul.nav_list>li:hover {
 }
 
 .sub_menu li {
+    position: relative;
     width: 100%;
     display: block;
     padding: 0 10px;
@@ -423,10 +427,9 @@ ul.nav_list>li:hover {
     border-bottom-right-radius: 3px;
 }
 
-.sub_menu li:hover {
+/* .sub_menu li:hover {
     background-color: #045b80;
-
-}
+} */
 
 ul.nav_list li:hover ul.sub_menu {
     display: block;
