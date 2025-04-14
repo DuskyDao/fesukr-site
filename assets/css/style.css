@@ -103,7 +103,7 @@ img {
     --dark-color-back: rgba(51, 52, 53, 0.8);
     --foxy-color: rgb(240, 124, 15);
     --food__empire__logo: #081e8e;
-    --blue-color: rgb(0, 171, 255);
+    --blue-color-old: rgb(0, 171, 255);
     --blue-color: #0097d6;
 
     --blue-color-hover: rgb(26, 146, 206);
@@ -373,7 +373,7 @@ html {
 
 ul.nav_list li.active,
 ul.nav_list>li:hover {
-    background-color: var(--blue-color-hover);
+    /* background-color: #081e8e; */
 }
 
 .nav_list li a {
@@ -384,21 +384,21 @@ ul.nav_list>li:hover {
     color: var(--light-color);
 }
 
-.nav_list li a::before {
-    content: '';
+.nav_list>li>a::before {
+    position: absolute;
     display: block;
-    height: 5px;
+    height: 2px;
+    width: 0%;
+    content: '';
     background-color: var(--light-color);
     border-radius: 5px;
-    position: absolute;
-    top: 0;
-    width: 0%;
+    bottom: 20%;
 
-    transition: all ease-in-out 250ms;
+    transition: all ease-in-out 450ms;
 }
 
 .nav_list li a:hover::before {
-    width: 100%;
+    width: 60%;
 }
 
 .sub_menu {
@@ -424,7 +424,8 @@ ul.nav_list>li:hover {
 }
 
 .sub_menu li:hover {
-    background-color: var(--blue-color-hover);
+    background-color: #045b80;
+
 }
 
 ul.nav_list li:hover ul.sub_menu {
