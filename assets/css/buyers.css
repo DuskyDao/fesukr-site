@@ -56,6 +56,7 @@
     display: flex;
     justify-content: center;
     gap: clamp(40px, 4vw, 100px);
+    flex-wrap: wrap;
 
 
 }
@@ -67,28 +68,45 @@
     margin-top: 4vw;
 
     & .logo__brand {
-        width: 250px;
+        max-width: 250px;
     }
 
-    &>p {
-        display: none;
+    & .commers__address {
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        margin-top: 20px;
+        /* background-color: var(--blue-color); */
+        border-radius: 10px;
+        padding: 20px;
+        gap: 10px;
         font-size: 1.3rem;
         font-weight: 600;
-        color: var(--blue-color);
     }
 
-    &>a {
-        margin-top: 10px;
-        background-color: var(--blue-color);
-        color: var(--light-color);
-        font-weight: 500;
-
-        &:hover {
-            border: solid 2px var(--blue-color);
-            background-color: var(--light-color);
-            color: var(--blue-color);
-        }
-    }
 }
 
-/* background: url('../img/icons/contact/email.svg') center center / contain no-repeat; */
+.commers__address a {
+    position: relative;
+    padding-left: 45px;
+    color: var(--dark-color-background);
+    /* color: var(--light-color); */
+}
+
+.commers__address a::before {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.commers__address a:first-child::before {
+    background: url('../img/icons/phone.svg') center center / contain no-repeat;
+}
+
+.commers__address a:last-child::before {
+    background: url('../img/icons/email.svg') center center / contain no-repeat;
+}

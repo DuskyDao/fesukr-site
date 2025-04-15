@@ -132,6 +132,10 @@
     padding: 0 10px 0 40px;
 }
 
+.form__container form input:placeholder-shown {
+    text-overflow: ellipsis;
+}
+
 .form__container form .input__wrapper::before {
     content: '';
     position: absolute;
@@ -144,16 +148,16 @@
 
 
 .form__container form .input__wrapper:nth-child(1):before {
-    background: url('../img/icons/contact/user.svg') center center / contain no-repeat;
+    background: url('../img/icons/user.svg') center center / contain no-repeat;
 }
 
 .form__container form .input__wrapper:nth-child(2):before {
     /* top: 54%; */
-    background: url('../img/icons/contact/email.svg') center center / contain no-repeat;
+    background: url('../img/icons/email.svg') center center / contain no-repeat;
 }
 
 .form__container form .input__wrapper:nth-child(3):before {
-    background: url('../img/icons/contact/subject.svg') center center / contain no-repeat;
+    background: url('../img/icons/list.svg') center center / contain no-repeat;
 }
 
 .form__container textarea {
