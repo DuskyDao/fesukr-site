@@ -47,14 +47,15 @@
     }
 }
 
+/* commers */
 .commers__container {
-    padding-bottom: 4vw;
+    padding-bottom: 5vw;
 }
 
 .commers__wrapper {
     display: flex;
     justify-content: center;
-    gap: clamp(20px, 3vw, 50px);
+    gap: clamp(40px, 4vw, 100px);
 
 
 }
@@ -63,9 +64,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2vw;
+    margin-top: 4vw;
+
+    & .logo__brand {
+        width: 250px;
+    }
 
     &>p {
+        display: none;
         font-size: 1.3rem;
         font-weight: 600;
         color: var(--blue-color);
@@ -84,3 +90,5 @@
         }
     }
 }
+
+/* background: url('../img/icons/contact/email.svg') center center / contain no-repeat; */

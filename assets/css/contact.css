@@ -75,17 +75,18 @@
     }
 
     & address {
+        margin-top: 10px;
         font-style: normal;
     }
 
     & h3 {
-        margin-top: 15px;
+        margin-top: 20px;
         font-size: 1.2rem;
         color: var(--blue-color);
     }
 
     & p {
-        margin-top: 5px;
+        margin-top: 7px;
     }
 }
 

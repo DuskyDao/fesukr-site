@@ -371,10 +371,10 @@ html {
     transition: background .3s ease;
 }
 
-ul.nav_list li.active,
+/* ul.nav_list li.active,
 ul.nav_list>li:hover {
-    /* background-color: #0c85b9; */
-}
+    background-color: #0c85b9;
+} */
 
 .nav_list li a {
     display: inline-block;
@@ -383,6 +383,10 @@ ul.nav_list>li:hover {
     line-height: 50px;
     padding: 0 10px;
     color: var(--light-color);
+
+    &:hover {
+        color: rgb(219, 234, 250);
+    }
 }
 
 .nav_list>li>a::before,
@@ -392,7 +396,7 @@ ul.nav_list>li:hover {
     height: 2px;
     width: 0%;
     content: '';
-    background-color: var(--light-color);
+    background-color: rgb(219, 234, 250);
     border-radius: 3px;
     bottom: 20%;
 
