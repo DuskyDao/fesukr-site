@@ -281,7 +281,7 @@ details[open] .question__desc {
     &.icons::before {
         width: 20px;
         height: 20px;
-        background: url(../img/icons/vacancies/cash.svg) center center /cover no-repeat;
+        background: url(../img/icons/cash.svg) center center /cover no-repeat;
     }
 
     & .wages__cash {
@@ -308,7 +308,7 @@ details[open] .question__desc {
     &.icons::before {
         width: 19px;
         height: 19px;
-        background: url(../img/icons/vacancies/place.svg) center center /cover no-repeat;
+        background: url(../img/icons/place.svg) center center /cover no-repeat;
     }
 }
 
@@ -318,7 +318,7 @@ details[open] .question__desc {
         top: -1px;
         width: 17px;
         height: 17px;
-        background: url(../img/icons/vacancies/calendar.svg) center center /cover no-repeat;
+        background: url(../img/icons/calendar.svg) center center /cover no-repeat;
     }
 }
 
@@ -329,7 +329,7 @@ details[open] .question__desc {
         top: -1px;
         width: 18px;
         height: 18px;
-        background: url(../img/icons/vacancies/yes.svg) center center /cover no-repeat;
+        background: url(../img/icons/yes.svg) center center /cover no-repeat;
     }
 }
 
