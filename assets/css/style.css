@@ -223,6 +223,7 @@ html {
 
     &>p {
         margin-left: 23px;
+        font-weight: 600;
     }
 }
 
