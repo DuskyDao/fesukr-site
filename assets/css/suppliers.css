@@ -44,7 +44,7 @@ main ol {
   min-width: 270px;
   margin-top: 1vw;
   padding: 3vh 2vw 5vh 2vw;
-  border-radius: 3px;
+  border-radius: var(--b-r16);
   background-color: var(--light-background);
   box-shadow: 0px 0px 5px var(--blue-shadow);
 

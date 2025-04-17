@@ -36,7 +36,7 @@
 
 .news__box {
     min-height: 455px;
-    border-radius: 5px;
+    border-radius: var(--b-r16);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     transition: box-shadow .3s ease;
     background-color: var(--light-color);
@@ -56,8 +56,8 @@
 
 .news__head__box {
     position: relative;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-top-left-radius: var(--b-r16);
+    border-top-right-radius: var(--b-r16);
     overflow: hidden;
 
     &>img {

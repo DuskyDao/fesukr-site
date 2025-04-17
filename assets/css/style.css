@@ -63,7 +63,7 @@ img {
     padding: auto;
     width: 200px;
     height: 45px;
-    border-radius: 5px;
+    border-radius: var(--b-r16);
     transition: all .4s ease;
 }
 
@@ -111,6 +111,9 @@ img {
     --blue-shadow: rgb(125, 166, 189);
     --head__gradient: linear-gradient(90.1deg, rgba(18, 8, 59, 1) 14.5%, rgba(29, 82, 110, 0.2) 135.4%);
     /* --head__gradient: linear-gradient(90.1deg, var(--blue-color) 14.5%, rgba(29, 82, 110, 0) 135.4%); */
+
+    --b-r16: 16px;
+
 
     /* --font-family: 'Open Sans', sans-serif; */
     /* --font-family: 'Inter', sans-serif; */
@@ -294,8 +297,8 @@ html {
     & #search input[type="text"] {
         width: 85px;
         height: 30px;
-        padding: 2px 2px 2px 32px;
-        border-radius: 5px;
+        padding: 2px 2px 2px 35px;
+        border-radius: var(--b-r16);
         border: none;
         background-color: inherit;
         color: var(--dark-color);
@@ -321,7 +324,7 @@ html {
     width: 23px;
     height: 23px;
     top: 3px;
-    left: 5px;
+    left: 8px;
     border: none;
     background: url(../img/icons/search.svg) center center / cover no-repeat;
     cursor: pointer;
@@ -428,8 +431,8 @@ ul.nav_list>li:hover {
 }
 
 .sub_menu li:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 
 /* .sub_menu li:hover {

@@ -107,7 +107,7 @@ h2 {
     img {
         height: 23vw;
         width: 100%;
-        border-radius: 5px;
+        border-radius: var(--b-r16);
         object-fit: cover;
         object-position: center;
 
@@ -149,7 +149,7 @@ h2 {
         max-width: 100%;
         margin-top: 1vw;
         background-color: var(--light-background);
-        border-radius: 5px;
+        border-radius: var(--b-r16);
 
         &>*:not(summary) {
             display: block !important;
@@ -236,7 +236,7 @@ details[open] .question__desc {
     max-width: 1200px;
     background-color: var(--light-color);
     box-shadow: 0px 0px 5px var(--blue-shadow);
-    border-radius: 5px;
+    border-radius: var(--b-r16);
 }
 
 .vacancie__header {
