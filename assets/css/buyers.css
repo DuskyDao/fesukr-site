@@ -104,7 +104,7 @@
         content: '';
         height: 60px;
         width: 60px;
-        background: url(/assets/img/icons/contacts.svg) center center / contain no-repeat;
+        background: url(../img/icons/contacts.svg) center center / contain no-repeat;
         /* background-color: var(--blue-color); */
         top: 30px;
         left: 30px;
@@ -137,7 +137,6 @@
 
         &:hover {
             color: var(--blue-color);
-            /* color: var(--dark-color); */
         }
     }
 }
