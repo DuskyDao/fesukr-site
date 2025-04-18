@@ -69,6 +69,6 @@ main ol {
     content: '';
     width: 15px;
     height: 15px;
-    background: url(../img/icons/vacancies/yes.svg) center center /cover no-repeat;
+    background: url(../img/icons/yes.svg) center center /cover no-repeat;
   }
 }

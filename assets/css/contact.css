@@ -60,6 +60,7 @@
 }
 
 .contact_text {
+
     & a {
         color: var(--dark-color);
         text-decoration: none;
