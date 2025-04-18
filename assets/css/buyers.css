@@ -41,10 +41,37 @@
     }
 }
 
+/* partners */
 .partners__container {
-    &>p:first-of-type {
-        margin-top: 2vw;
+    &>h2 {
+        text-align: left;
     }
+
+    &>.line__blue {
+        margin: 2vw auto 2vw 0;
+    }
+}
+
+.partners__wrapper {
+    display: flex;
+    margin-top: 3vw;
+}
+
+.partners__dsc {
+    &>ul {
+        list-style: inside;
+        margin-left: 10px;
+        font-size: clamp(14px, 1.5vw, 1rem);
+
+        &>li::marker {
+            color: var(--blue-color);
+        }
+    }
+}
+
+.partners__img {
+    width: 100%;
+    background: url(../img/page/buyers/clients4.jpg) center center / cover no-repeat;
 }
 
 /* comers */

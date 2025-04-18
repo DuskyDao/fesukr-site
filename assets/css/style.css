@@ -375,24 +375,21 @@ html {
     transition: background .3s ease;
 }
 
-/* ul.nav_list li.active,
-ul.nav_list>li:hover {
-    background-color: #0c85b9;
-} */
-
 .nav_list li a {
     display: inline-block;
     position: relative;
+    /* width: 100%; */
     font-size: 1.05rem;
     line-height: 50px;
-    padding: 0 10px;
+    padding: 0 15px;
     color: var(--light-color);
 
-    &:hover {
+    /* &:hover {
         color: rgb(219, 234, 250);
-    }
+    } */
 }
 
+/* line */
 .nav_list>li>a::before,
 .sub_menu>li>a::before {
     position: absolute;
@@ -401,6 +398,7 @@ ul.nav_list>li:hover {
     width: 0%;
     content: '';
     background-color: rgb(219, 234, 250);
+    background-color: var(--light-color);
     border-radius: 3px;
     bottom: 20%;
 
@@ -409,14 +407,40 @@ ul.nav_list>li:hover {
 
 .nav_list>li>a:hover::before,
 .sub_menu>li>a:hover::before {
-    width: 60%;
+    width: 50%;
 }
 
+/* Стили для стрелки */
+.nav_list li a.arrow {
+    padding-right: 20px;
+
+    &::after {
+        position: absolute;
+        content: "";
+        height: 10px;
+        width: 10px;
+        top: 53%;
+        right: 5px;
+        transform: translateY(-50%);
+        transform-origin: center;
+        background: url(../img/icons/arrow.svg) center center / contain no-repeat;
+        transition: transform .5s ease;
+    }
+}
+
+ul.nav_list li:hover .arrow::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* sub menu */
 .sub_menu {
-    display: none;
+    display: block;
     position: absolute;
     left: 0;
     top: 50px;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    /* transform: translateY(-15px); */
 }
 
 .sub_menu li {
@@ -425,9 +449,8 @@ ul.nav_list>li:hover {
     display: block;
     padding: 0 10px;
     background-color: var(--blue-color);
-    border-top: solid 1px var(--light-color);
     box-shadow: 0 0 2px var(--blue-shadow);
-    transition: background .3s ease;
+    border-top: solid 1px var(--light-color);
 }
 
 .sub_menu li:last-child {
@@ -435,13 +458,49 @@ ul.nav_list>li:hover {
     border-bottom-right-radius: 5px;
 }
 
-/* .sub_menu li:hover {
-    background-color: #045b80;
-} */
+.sub_menu li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sub_menu li:nth-child(1) {
+    transition-delay: 0.2s;
+}
+
+.sub_menu li:nth-child(2) {
+    transition-delay: 0.3s;
+}
+
+ul.nav_list li:hover .sub_menu li {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 ul.nav_list li:hover ul.sub_menu {
-    display: block;
+    animation: slideIn 0.4s ease forwards;
+    visibility: visible;
 }
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-15px) scale(0.9);
+    }
+
+    70% {
+        opacity: 0.7;
+        transform: translateY(5px) scale(1.05);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
 
 /* footer */
 footer {
