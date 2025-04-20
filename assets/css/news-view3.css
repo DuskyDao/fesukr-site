@@ -1,6 +1,7 @@
-.wrapper {
+.news-views__wrapper {
+    min-height: 100vh;
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 300px;
     justify-content: space-between;
     gap: 30px;
     margin: 0 auto;
@@ -151,12 +152,14 @@
 
 
 /* aside */
-.aside {
+.news-views__wrapper .aside {
+    position: sticky !important;
+    top: 60px !important;
     width: 300px;
     margin-top: 8vw;
 }
 
-.aside h3:not(:first-of-type) {
+.aside h3 {
     font-size: 1.5rem;
     font-weight: 600;
 }
@@ -168,6 +171,19 @@
     font-size: 1rem;
     margin-top: 20px;
     list-style: none;
+
+    & h4 {
+        margin-top: 10px;
+    }
+
+    & img {
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: var(--b-r16);
+        border-radius: 5px;
+    }
 }
 
 .aside__news.visible {
