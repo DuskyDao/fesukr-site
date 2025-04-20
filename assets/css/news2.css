@@ -183,3 +183,10 @@
         margin-top: 5px;
     }
 }
+
+/* page__numbers */
+.page__numbers {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

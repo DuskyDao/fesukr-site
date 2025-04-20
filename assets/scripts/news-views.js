@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const elements = document.querySelectorAll('.news__box, .animate, .aside-news, .quote');
+    const elements = document.querySelectorAll('.news__box, .animate, .aside__news, .quote');
 
     const observer = new IntersectionObserver(
         (entries) => {
