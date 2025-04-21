@@ -1,19 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const newsBoxes = document.querySelectorAll('.news__box');
+    const elements = document.querySelectorAll('.news__box, .animate, .news__aside__box, .quote, .pagination__wrapper');
 
     const observer = new IntersectionObserver(
         (entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target); // Останавливаем наблюдение после появления
+                    observer.unobserve(entry.target);
                 }
             });
         },
         {
-            threshold: 0.1, // Срабатывает, когда 10% блока видно
+            threshold: 0.1,
+            rootMargin: '50px'
         }
     );
 
-    newsBoxes.forEach((box) => observer.observe(box));
+    elements.forEach((element) => {
+        observer.observe(element);
+        const rect = element.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            element.classList.add('visible');
+            observer.unobserve(element);
+        }
+    });
 });
