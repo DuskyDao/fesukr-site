@@ -57,7 +57,6 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 50%;
     transform: translateY(-50%);
     width: 16px;
     height: 16px;
@@ -68,10 +67,12 @@
 
 .news__author::before {
     background: url('../img/icons/author-w-blue.svg') center center / cover no-repeat;
+    top: 50%;
 }
 
 .news__date::before {
     background: url('../img/icons/calendar.svg') center center / cover no-repeat;
+    top: 45%;
 }
 
 /* .news-content:hover .news__author::before {
@@ -155,24 +156,15 @@
     /* position: sticky !important; */
     /* top: 20px !important; */
     width: 300px;
-    /* border: solid 1px var(--blue-color);
-            */
+    /* border: solid 1px var(--blue-color); */
     margin: 125px 0 10vw 0;
     align-self: start;
     height: fit-content;
 }
 
 .news__aside h3 {
-    /* display: flex; */
-    /* align-items: center; */
-    /* height: 40px; */
-    /* background-color: var(--blue-color); */
-    /* color: var(--light-color); */
     font-size: 1.5rem;
     font-weight: 600;
-    /* border-radius: var(--b-r16); */
-    /* padding-left: 15px; */
-    /* margin-bottom: 50px; */
 }
 
 .news__aside__box {
@@ -181,10 +173,7 @@
     transition: opacity 0.5s ease, transform 0.5s ease;
     font-size: 1rem;
     margin-top: 30px;
-    /* list-style: none; */
-    overflow: hidden;
 
-    /* padding: 0 10px; */
     &:first-child {
         margin-top: 15px;
     }
@@ -192,15 +181,6 @@
     & h4 {
         margin-top: 10px;
         transition: color 1s ease;
-    }
-
-    & img {
-        width: 300px;
-        height: 200px;
-        object-fit: cover;
-        object-position: top;
-        border-radius: var(--b-r16);
-        transition: transform .3s ease;
     }
 
     & p {
@@ -212,6 +192,20 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+    }
+}
+
+.news__header__img {
+    border-radius: var(--b-r16);
+    overflow: hidden;
+
+    & img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        object-position: 60% top;
+        border-radius: var(--b-r16);
+        transition: transform .3s ease;
     }
 }
 

@@ -55,7 +55,6 @@
 }
 
 .news__head__box {
-    position: relative;
     border-radius: var(--b-r16);
     overflow: hidden;
 
