@@ -83,8 +83,12 @@
         font-size: 15px;
         color: var(--dark-color-back);
 
+        /* блок урезает текст до 3х строчек */
         display: -webkit-box;
+        /* Фолбэк для старых браузеров */
         -webkit-line-clamp: 3;
+        /* Современный стандарт */
+        line-clamp: 3;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
@@ -260,13 +264,13 @@
         flex-wrap: wrap;
     }
 
-    .pagination a {
+    .pagination__wrapper a {
         padding: 4px 8px;
         font-size: 0.9rem;
     }
 
-    .pagination .prev,
-    .pagination .next {
+    .pagination__wrapper .prev,
+    .pagination__wrapper .next {
         padding: 6px;
     }
 }
