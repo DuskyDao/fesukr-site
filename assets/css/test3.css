@@ -1,0 +1,85 @@
+/* Стили для табов */
+body {
+    min-height: 100vh;
+}
+
+.tabs {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tabs.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tabs__nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+}
+
+.tabs__button {
+    padding: 10px 20px;
+    background: #212121;
+    border: none;
+    border-radius: 5px 5px 0 0;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tabs__button:hover,
+.tabs__button.active {
+    background: #00C4B4;
+    color: #212121;
+}
+
+.tabs__button:focus {
+    outline: 2px solid #00C4B4;
+    outline-offset: 2px;
+}
+
+.tabs__content {
+    background: #212121;
+    padding: 20px;
+    border-radius: 0 5px 5px 5px;
+}
+
+.tabs__panel {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tabs__panel.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .tabs__nav {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+
+    .tabs__button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .tabs__content {
+        padding: 15px;
+    }
+}
