@@ -1,15 +1,10 @@
 /* Стили для табов */
-body {
-    min-height: 100vh;
-}
 
 .tabs {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
     opacity: 0;
     transform: translateY(20px);
     transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-bottom: 4vw;
 }
 
 .tabs.visible {
@@ -19,17 +14,18 @@ body {
 
 .tabs__nav {
     display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 10px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid #333;
+    margin: 20px 0;
 }
 
 .tabs__button {
+    min-width: 250px;
     padding: 10px 20px;
-    background: #212121;
-    border: none;
-    border-radius: 5px 5px 0 0;
-    font-size: 1rem;
+    color: var(--dark-color-back);
+    border: 2px solid rgba(0, 0, 0, 0.001);
+    border-radius: 5px;
     font-weight: 600;
     cursor: pointer;
     transition: background 0.3s ease, color 0.3s ease;
@@ -37,17 +33,17 @@ body {
 
 .tabs__button:hover,
 .tabs__button.active {
-    background: #00C4B4;
-    color: #212121;
+    background: inherit;
+    color: var(--blue-color);
+    border: 2px solid var(--blue-color);
 }
 
 .tabs__button:focus {
-    outline: 2px solid #00C4B4;
+    /* outline: 2px solid #00C4B4; */
     outline-offset: 2px;
 }
 
 .tabs__content {
-    background: #212121;
     padding: 20px;
     border-radius: 0 5px 5px 5px;
 }
