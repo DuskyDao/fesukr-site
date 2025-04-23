@@ -198,13 +198,17 @@ details[open] .header__questions {
     font-size: clamp(14px, 1rem, 1rem);
     overflow: hidden;
     height: 0;
-    padding: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 30px);
+    /* padding: 0 clamp(10px, 2vw, 30px); */
     padding-top: 0;
     transition: height .5s ease;
 }
 
-details[open] .question__desc {
+/* details[open] .question__desc {
     height: auto;
+} */
+
+.question__desc.open {
+    padding: 0 clamp(10px, 2vw, 20px) clamp(10px, 2vw, 30px) clamp(10px, 2vw, 30px);
 }
 
 /* vacancies */
