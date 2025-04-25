@@ -1,45 +1,3 @@
-/*  COLORS
-========================================== */
-$black: #000000;
-$white: #ffffff;
-$gray: #2a2a2a;
-$gold: #b7ac7f;
-
-/*  FONTS
-========================================== */
-
-$raleway: 'Raleway', sans-serif;
-$spectral: 'Spectral', serif;
-
-
-/*  MIXINS
-========================================== */
-
-@mixin transform($transform) {
-    -webkit-transform: $transform;
-    -moz-transform: $transform;
-    -ms-transform: $transform;
-    -o-transform: $transform;
-    transform: $transform;
-}
-
-@mixin transition($transition) {
-    -webkit-transition: #{$transition};
-    -moz-transition: #{$transition};
-    -o-transition: #{$transition};
-    transition: #{$transition};
-}
-
-@mixin transition-delay($transition-delay) {
-    -webkit-transition-delay: #{$transition-delay};
-    -moz-transition-delay: #{$transition-delay};
-    -o-transition-delay: #{$transition-delay};
-    transition-delay: #{$transition-delay};
-}
-
-/*  RESET
-========================================== */
-
 *,
 *:before,
 *:after {
@@ -113,11 +71,11 @@ nav {
     transition: transform .55s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 
     &.show {
-        @include transform(translateX(0px));
+        transform: translateX(0px);
 
         ul.main {
             li {
-                @include transform(translateX(0px));
+                transform: translateX(0px);
                 opacity: 1;
 
                 @for $i from 1 to 10 {

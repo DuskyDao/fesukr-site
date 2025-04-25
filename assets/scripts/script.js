@@ -123,3 +123,17 @@ document.addEventListener('DOMContentLoaded', () => {
     initTabs();
     initDetails();
 });
+
+
+// hamburger +nav menu
+document.querySelector('.hamburger').addEventListener('click', function () {
+    this.classList.toggle('active');
+    document.querySelector('.mobile__nav').classList.toggle('active');
+});
+// close nav (optional)
+document.querySelectorAll('.mobile__nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.hamburger').classList.remove('active');
+        document.querySelector('.mobile__nav').classList.remove('active');
+    });
+});

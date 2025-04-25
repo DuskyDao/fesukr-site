@@ -8,7 +8,7 @@ body {
 }
 
 .menu-icon-wrapper {
-    background: red;
+    /* background: red; */
     width: 30px;
     height: 30px;
     display: flex;

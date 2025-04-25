@@ -53,28 +53,54 @@
             </div>
         </section>
 
-        <nav class="header__nav">
-            <div class="header__main">
-                <div class="header__main_container default__container">
+        <section class="nav__section">
+            <div class="default__container">
+                <div class="header__container">
                     <div class="name__company">
                         <a href="index.html">FES UKR</a>
                     </div>
-                    <ul class="nav_list">
-                        <li><a href="company.html">Підприємство</a></li>
-                        <li><a href="news.html">Новини</a></li>
-                        <li><a href="brands.html">Бренди</a></li>
-                        <li><a class="arrow" href="#">Співпраця</a>
-                            <ul class="sub_menu">
-                                <li><a href="suppliers.html">Постачальникам</a></li>
-                                <li><a href="buyers.html">Покупцям</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="vacancies.html">Вакансії</a></li>
-                        <li><a href="contact.html">Контакти</a></li>
-                    </ul>
+                    <nav class="desktop__nav">
+                        <ul>
+                            <li><a href="company.html">Підприємство</a></li>
+                            <li><a href="news.html">Новини</a></li>
+                            <li><a href="brands.html">Бренди</a></li>
+                            <li><a class="arrow" href="#">Співпраця</a>
+                                <ul class="sub_menu">
+                                    <li><a href="suppliers.html">Постачальникам</a></li>
+                                    <li><a href="buyers.html">Покупцям</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="vacancies.html">Вакансії</a></li>
+                            <li><a href="contact.html">Контакти</a></li>
+                        </ul>
+                    </nav>
+                    <!-- Hamburger icon -->
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+
                 </div>
             </div>
-        </nav>
+            <!-- Мобильное меню -->
+            <nav class="mobile__nav">
+                <ul class="default__container">
+                    <li><a href="company.html">Підприємство</a></li>
+                    <li><a href="news.html">Новини</a></li>
+                    <li><a href="brands.html">Бренди</a></li>
+                    <li><a class="arrow" href="#">Співпраця</a>
+                        <ul class="sub_menu">
+                            <li><a href="suppliers.html">Постачальникам</a></li>
+                            <li><a href="buyers.html">Покупцям</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="vacancies.html">Вакансії</a></li>
+                    <li><a href="contact.html">Контакти</a></li>
+                </ul>
+            </nav>
+        </section>
     </header>
 
     <main>
@@ -148,6 +174,7 @@
             <p class="footer__copyright">Copyright © 2025 <span>FES UKR</span></p>
         </div>
     </footer>
+    <script defer src="assets/scripts/script.js"></script>
 </body>
 
 </html>
