@@ -131,9 +131,9 @@ document.querySelector('.hamburger').addEventListener('click', function () {
     document.querySelector('.mobile__nav').classList.toggle('active');
 });
 // close nav (optional)
-document.querySelectorAll('.mobile__nav a').forEach(link => {
-    link.addEventListener('click', () => {
-        document.querySelector('.hamburger').classList.remove('active');
-        document.querySelector('.mobile__nav').classList.remove('active');
-    });
-});
+// document.querySelectorAll('.mobile__nav a').forEach(link => {
+//     link.addEventListener('click', () => {
+//         document.querySelector('.hamburger').classList.remove('active');
+//         document.querySelector('.mobile__nav').classList.remove('active');
+//     });
+// });

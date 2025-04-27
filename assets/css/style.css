@@ -167,7 +167,7 @@ html {
     }
 
     @media screen and (max-width:600px) {
-        margin: 0 2%;
+        margin: 0 3%;
     }
 }
 
@@ -474,6 +474,7 @@ html {
 }
 
 .desktop__nav>ul>li:hover .sub_menu {
+    z-index: 999;
     visibility: visible;
 }
 
@@ -501,7 +502,7 @@ html {
     display: block;
     width: 30px;
     height: 4px;
-    background: #fff;
+    background: var(--light-color);
     margin: 6px 0;
     transition: all 0.3s ease;
     border-radius: 5px;
@@ -527,14 +528,12 @@ html {
 .mobile__section {}
 
 .mobile__nav {
-    /* position: relative; */
-    position: absolute;
+    position: relative;
     display: none;
     width: 100%;
     background: var(--blue-color);
-    opacity: .9;
     transition: all 0.3s ease;
-    padding: 20px 0;
+    padding-bottom: 20px;
 }
 
 .mobile__nav.active {
@@ -560,22 +559,54 @@ html {
 }
 
 .mobile__nav ul {
+    display: flex;
     flex-direction: column;
-    align-items: end;
+    align-items: start;
     gap: 10px;
 }
 
 .mobile__nav a {
-    color: var(--light-color);
+    /* color: var(--light-color); */
+    color: var(--dark-color);
     font-size: 1.2rem;
+    font-weight: 500;
 }
 
-.mobile__nav a:hover {
-    /* text-decoration: underline; */
+.mobile__nav a:hover,
+.mobile__nav a:active,
+.mobile__nav a:focus {
+    color: var(--light-color);
+}
+
+.mobile__nav>ul>li {
+    position: relative;
+}
+
+.mobile__nav .mob__sub__menu {
+    display: none;
+}
+
+.mobile__nav>ul>li:hover .mob__sub__menu,
+.mobile__nav>ul>li:active .mob__sub__menu,
+.mobile__nav>ul>li:focus .mob__sub__menu {
+    display: block;
+    /* z-index: 999; */
+}
+
+.mob__sub__menu {
+    margin-left: 20px;
+
+    &>li {
+        margin-top: 10px;
+    }
 }
 
 /* Медиа-запрос для мобильных */
 @media screen and (max-width: 968px) {
+    .name__company>a {
+        padding-left: 5px;
+    }
+
     .desktop__nav {
         display: none;
     }
@@ -599,6 +630,17 @@ html {
         &>p {
             display: none;
         }
+    }
+
+    .mobile__nav {
+        padding-left: 5px;
+    }
+
+    .mobile__nav>.default__container {
+        padding-top: 10px;
+        /* border-top: solid 3px var(--light-color); */
+        border-top: solid 3px var(--foxy-color);
+        /* border-top: solid 3px var(--dark-color); */
     }
 }
 
