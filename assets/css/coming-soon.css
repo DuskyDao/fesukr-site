@@ -1,4 +1,5 @@
 main {
+  position: relative;
   height: 90vh;
   background: var(--light-background);
   color: var(--blue-color);
