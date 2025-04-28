@@ -55,7 +55,7 @@ main {
   -webkit-animation: fadeIn 1000ms ease;
 
   & h1 {
-    font-size: 90px;
+    font-size: clamp(40px, 5vw, 90px);
     margin-bottom: 0;
     line-height: 1;
     font-weight: 700;

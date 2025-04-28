@@ -521,21 +521,14 @@ html {
 }
 
 /* Мобильное меню */
-.mobile__section {
-    position: relative;
-}
-
 .mobile__nav {
     position: absolute;
-    top: 50px;
     width: 100%;
-    /* height: 100%; */
     display: none;
-    /* background: var(--blue-color); */
-    background-color: #FF7600;
+    background: var(--blue-color);
     transition: all 0.3s ease;
-    /* padding-bottom: 20px; */
-    z-index: 99;
+    padding-bottom: 20px;
+    z-index: 9;
 }
 
 .mobile__nav.active {
@@ -565,7 +558,7 @@ html {
     flex-direction: column;
     align-items: start;
     gap: 10px;
-    z-index: 99;
+    z-index: 9;
 }
 
 .mobile__nav a {
@@ -593,7 +586,6 @@ html {
 .mobile__nav>ul>li:active .mob__sub__menu,
 .mobile__nav>ul>li:focus .mob__sub__menu {
     display: block;
-    /* z-index: 999; */
 }
 
 .mob__sub__menu {
@@ -623,7 +615,6 @@ html {
         align-self: center;
         height: 75px;
         min-width: 175px;
-        /* padding: 5px 0; */
     }
 
     .tell__box,
@@ -636,13 +627,13 @@ html {
     }
 
     .mobile__nav {
-        /* padding-left: 5px; */
+        padding-left: 5px;
     }
 
     .mobile__nav>.default__container {
-        /* padding-top: 10px; */
+        padding-top: 10px;
         /* border-top: solid 3px var(--light-color); */
-        /* border-top: solid 3px var(--foxy-color); */
+        border-top: solid 3px var(--foxy-color);
         /* border-top: solid 3px var(--dark-color); */
     }
 }
