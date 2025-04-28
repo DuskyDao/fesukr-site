@@ -1,6 +1,6 @@
 .contact__header__section {
     position: relative;
-    height: 380px;
+    height: clamp(200px, 380px, 380px);
     overflow: hidden;
 }
 
