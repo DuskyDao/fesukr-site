@@ -7,12 +7,12 @@
     text-align: center;
 
     &>p {
-        font-size: 1.1rem;
+        font-size: clamp(14px, 1vw, 1.1rem);
         color: var(--dark-color);
     }
 
     &>h1 {
-        font-size: 3rem;
+        font-size: clamp(2rem, 3vw, 3rem);
         color: var(--blue-color);
         text-transform: uppercase;
 

@@ -1,54 +1,56 @@
-/* Общий контейнер */
-.tabs-container {
+.title {
+    margin-top: 3vw;
+    text-align: start;
+}
+
+.tabs__container {
     display: flex;
-    padding: 2vw 0;
+    padding: 4vw 0;
 }
 
-/* Радио кнопки */
-.tabs-container input {
-    display: none;
-}
-
-/* Секция с вкладками */
-.tabs {
+.tabs__nav {
     display: flex;
     flex-direction: column;
     min-width: 300px;
-    border-right: 1px solid var(--blue-color);
+    background: var(--dark-color);
+    /* background: var(--blue-color); */
+    border-radius: var(--b-r16);
 }
 
-.tabs label {
-    display: block;
-    padding: 25px 2vw 15px 2vw;
+.tabs__button {
+    text-align: start;
+    padding: 15px 3vw;
     font-size: clamp(1rem, 1vw, 1.2rem);
-    /* font-weight: 500; */
     cursor: pointer;
     transition: background 0.3s ease;
+    color: var(--light-color);
+    background: inherit;
+    border: none;
+    border-bottom: 1px solid var(--light-color);
 
-    &:not(:last-child) {
-        border-bottom: 1px solid var(--blue-color);
+    &:first-child,
+    &:first-child:hover {
+        border-radius: var(--b-r16) var(--b-r16) 0 0;
     }
 
-    &:hover {
+    &:hover,
+    &.active {
         background: var(--blue-color);
-        color: var(--light-color)
     }
 }
 
 /* страница */
-.content-container {
+.tabs__content {
     flex: 1;
     padding-left: 2vw;
 }
 
-.tab-content {
-    display: none;
+.tabs__panel {
     width: 100%;
-    padding: 10px;
+    line-height: var(--line-h);
 
     & h3 {
         margin-top: 15px;
-        color: var(--blue-color);
     }
 
     & p {
@@ -77,49 +79,39 @@
     }
 }
 
-/* при выбранной вкладке включает заданую страницу */
-#tab1:checked~.content-container #content1,
-#tab2:checked~.content-container #content2,
-#tab3:checked~.content-container #content3,
-#tab4:checked~.content-container #content4,
-#tab5:checked~.content-container #content5,
-#tab6:checked~.content-container #content6,
-#tab7:checked~.content-container #content7 {
-    display: block;
-}
 
-/* #content2.tab-content>h2 {
-    text-align: center;
-    color: var(--dark-color);
-} */
-
-/* history */
-ul.history__wrapper {
-    display: flex;
-    flex-direction: column;
-    border-left: 2px solid var(--blue-color);
-    padding: 2vw 0 2vw 40px;
-}
-
-.history__box {
-    position: relative;
-    list-style: none;
-
-    &::before {
-        position: absolute;
-        display: block;
-        content: '';
-        border-radius: 50%;
-        background-color: var(--blue-color);
-        height: 20px;
-        width: 20px;
-        top: 15px;
-        left: -40px;
-    }
-
-    & .history__date {
-        position: absolute;
-        top: 15px;
-        left: -60px;
+@media screen and (max-width: 1440px) {
+    .tabs__nav {
+        min-width: 250px;
     }
 }
+
+@media screen and (max-width: 1280px) {
+    .tabs__container {
+        flex-direction: column;
+    }
+
+    .tabs__nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 0vw auto 4vw auto;
+        width: fit-content;
+        background: transparent;
+        gap: 20px;
+    }
+
+    .tabs__button,
+    .tabs__button:first-child {
+        font-size: .9rem;
+        border: none;
+        border-radius: var(--b-r16) 0 var(--b-r16) 0;
+        background: var(--dark-color);
+    }
+
+    .tabs__button:first-child:hover {
+        border-radius: var(--b-r16) 0 var(--b-r16) 0;
+    }
+
+    .tabs__button.active {
+        background: var(--blue-color);
+    }

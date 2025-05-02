@@ -113,6 +113,7 @@ img {
     /* --head__gradient: linear-gradient(90.1deg, var(--blue-color) 14.5%, rgba(29, 82, 110, 0) 135.4%); */
 
     --b-r16: 16px;
+    --line-h: 1.6;
 
 
     /* --font-family: 'Open Sans', sans-serif; */
@@ -162,7 +163,7 @@ html {
         margin: 0 6%;
     }
 
-    @media screen and (max-width:768px) {
+    @media screen and (max-width:1024px) {
         margin: 0 5%;
     }
 
@@ -178,7 +179,7 @@ html {
 /* top block socials */
 .header__top {
     height: 90px;
-    background-color: var(--dark-background);
+    /* background-color: var(--dark-background); */
     position: relative;
     z-index: 9;
 }

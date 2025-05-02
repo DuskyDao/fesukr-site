@@ -26,6 +26,7 @@ main ol {
 
   & p {
     margin-top: 10px;
+    line-height: var(--line-h);
   }
 }
 
@@ -51,52 +52,6 @@ main ol {
   }
 }
 
-.table__dsc {
-  text-align: center;
-}
-
-.table__main {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2vw;
-  margin-bottom: 2vw;
-}
-
-.legal,
-.physical {
-  max-width: 40%;
-  min-width: 270px;
-  margin-top: 1vw;
-  padding: 3vh 2vw 5vh 2vw;
-  border-radius: var(--b-r16);
-  background-color: var(--light-background);
-  box-shadow: 0px 0px 5px var(--blue-shadow);
-
-  h3 {
-    text-align: center;
-    font-size: 1.3rem;
-    margin-bottom: 0.8vw;
-  }
-
-  & ol li {
-    position: relative;
-    list-style: none;
-    margin-top: 10px;
-    padding-left: 18px;
-    line-height: 1.7rem;
-  }
-
-  & ol li::before {
-    position: absolute;
-    top: 3px;
-    left: 0;
-    content: '';
-    width: 15px;
-    height: 15px;
-    background: url(../img/icons/yes.svg) center center /cover no-repeat;
-  }
-}
 
 /* Стили для табов */
 .tabs {
@@ -158,6 +113,67 @@ main ol {
   display: block;
   opacity: 1;
   transform: translateY(0);
+
+  &>p,
+  &>ul>li {
+    line-height: var(--line-h);
+  }
+}
+
+/*   */
+.suppliers {
+
+  & p,
+  & ul>li {
+    line-height: var(--line-h);
+  }
+}
+
+.table__dsc {
+  text-align: center;
+}
+
+.table__main {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2vw;
+  margin-bottom: 2vw;
+}
+
+.legal,
+.physical {
+  max-width: 40%;
+  min-width: 270px;
+  margin-top: 1vw;
+  padding: 3vh 2vw 5vh 2vw;
+  border-radius: var(--b-r16);
+  background-color: var(--light-background);
+  box-shadow: 0px 0px 5px var(--blue-shadow);
+
+  h3 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 0.8vw;
+  }
+
+  & ol li {
+    position: relative;
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 18px;
+    line-height: 1.7rem;
+  }
+
+  & ol li::before {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: url(../img/icons/yes.svg) center center /cover no-repeat;
+  }
 }
 
 /* Адаптивность */
