@@ -5,7 +5,7 @@
 
 .tabs__container {
     display: flex;
-    padding: 4vw 0;
+    padding: 2vw 0 4vw 0;
 }
 
 .tabs__nav {
@@ -18,8 +18,9 @@
 }
 
 .tabs__button {
+    position: relative;
     text-align: start;
-    padding: 15px 3vw;
+    padding: 15px 3vw 15px 1.5vw;
     font-size: clamp(1rem, 1vw, 1.2rem);
     cursor: pointer;
     transition: background 0.3s ease;
@@ -94,7 +95,8 @@
     .tabs__nav {
         flex-direction: row;
         flex-wrap: wrap;
-        margin: 0vw auto 4vw auto;
+        /* margin: 0vw auto 4vw auto; */
+        margin-bottom: 4vw;
         width: fit-content;
         background: transparent;
         gap: 20px;
@@ -102,9 +104,12 @@
 
     .tabs__button,
     .tabs__button:first-child {
+        padding: 15px 30px;
         font-size: .9rem;
+        text-transform: uppercase;
         border: none;
         border-radius: var(--b-r16) 0 var(--b-r16) 0;
+        /* border-radius: 25px 0 25px 0; */
         background: var(--dark-color);
     }
 
@@ -115,3 +120,8 @@
     .tabs__button.active {
         background: var(--blue-color);
     }
+
+    .tabs__content {
+        padding-left: 0;
+    }
+}

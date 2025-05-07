@@ -6,9 +6,10 @@
     margin-top: 4vw;
     text-align: center;
 
-    &>p {
+    & p {
         font-size: clamp(14px, 1vw, 1.1rem);
         color: var(--dark-color);
+        transform: translateY(-40px);
     }
 
     &>h1 {
@@ -43,15 +44,7 @@
 }
 
 .news__box {
-    /* min-height: 455px; */
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.news__box.visible {
-    opacity: 1;
-    transform: translateY(0);
+    max-width: 450px;
 }
 
 .news__head__box {
@@ -197,14 +190,6 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.pagination__wrapper.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .pagination__wrapper a:not(.prev, .next) {

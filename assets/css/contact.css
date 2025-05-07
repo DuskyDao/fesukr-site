@@ -1,6 +1,6 @@
 .contact__header__section {
     position: relative;
-    height: clamp(200px, 380px, 380px);
+    height: 380px;
     overflow: hidden;
 }
 
@@ -9,8 +9,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    /* object-fit: cover; */
-    /* object-position: center top; */
 }
 
 .contact__header__section:after {
@@ -38,10 +36,26 @@
         font-size: 4rem;
         margin-bottom: 30px;
         color: inherit;
+        opacity: 0;
+        transform: translateX(-20px);
+        transition: opacity 0.5s ease .5s, transform 0.5s ease .5s;
     }
 
     &>p {
         max-width: 900px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease .3s, transform 0.5s ease .3s;
+    }
+
+    & h1.visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    & p.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 

@@ -93,6 +93,51 @@ img {
     background-color: var(--blue-color);
 }
 
+/* animate */
+.animate-x {
+    transform: translateX(-20px);
+    transition: opacity .5s ease .5s, transform .5s ease .5s;
+}
+
+.animate-x-d {
+    transform: translateX(-20px);
+    transition: opacity .5s ease 1s, transform .5s ease 1s;
+}
+
+.animate-y {
+    transform: translateY(40px);
+    transition: opacity .5s ease, transform .5s ease;
+}
+
+.animate-y-d {
+    transform: translateY(40px);
+    transition: opacity .5s ease .8s, transform .5s ease .8s;
+}
+
+.animate-scale {
+    transform: scale(0.95);
+    transition: opacity .5s ease, transform .5s ease;
+}
+
+.animate-scale-d {
+    transition: opacity .5s ease 1s, transform .5s ease 1s;
+}
+
+.animate-y,
+.animate-y-d,
+.animate-x,
+.animate-x-d,
+.animate-scale,
+.animate-scale-d {
+    opacity: 0;
+
+    &.visible {
+        opacity: 1;
+        transform: translateX(0) translateY(0) scale(1);
+    }
+}
+
+/* variables */
 :root {
     --light-background: rgb(255, 255, 255);
     --dark-background: rgba(0, 0, 0, 0.04);

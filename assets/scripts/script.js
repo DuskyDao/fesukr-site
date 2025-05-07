@@ -119,7 +119,7 @@ function initDetails() {
 
 // Инициализация
 document.addEventListener('DOMContentLoaded', () => {
-    initObserver(document.querySelectorAll('.news__box, .animate, .news__aside__box, .quote, .pagination__wrapper, .tabs'));
+    initObserver(document.querySelectorAll('.animate-y, .animate-y-d, .animate-x, .animate-x-d, .animate-scale, .animate-scale-d'));
     initTabs();
     initDetails();
 });
