@@ -63,7 +63,8 @@ img {
     padding: auto;
     width: 200px;
     height: 45px;
-    border-radius: var(--b-r16);
+    /* border-radius: var(--b-r16); */
+    border-radius: 0.5rem;
     transition: all .4s ease;
 }
 

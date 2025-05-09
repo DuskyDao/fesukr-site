@@ -36,26 +36,10 @@
         font-size: 4rem;
         margin-bottom: 30px;
         color: inherit;
-        opacity: 0;
-        transform: translateX(-20px);
-        transition: opacity 0.5s ease .5s, transform 0.5s ease .5s;
     }
 
     &>p {
         max-width: 900px;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease .3s, transform 0.5s ease .3s;
-    }
-
-    & h1.visible {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    & p.visible {
-        opacity: 1;
-        transform: translateY(0);
     }
 }
 
@@ -87,6 +71,7 @@
     &>h2 {
         font-size: 2rem;
         text-align: left;
+        transition: opacity .5s ease 1.5s, transform .5s ease 1.5s;
     }
 
     & address {
@@ -167,7 +152,6 @@
 }
 
 .form__container form .input__wrapper:nth-child(2):before {
-    /* top: 54%; */
     background: url('../img/icons/email.svg') center center / contain no-repeat;
 }
 
@@ -189,7 +173,6 @@
     border: none;
     border-radius: var(--b-r16);
     color: var(--dark-color-back);
-    /* color: var(--dark-color); */
 }
 
 
@@ -211,22 +194,8 @@
 .contact_map {
     position: relative;
     width: 100%;
-    animation: map_anime 2s ease-in 0s 1 reverse none;
 }
 
-/* anime map */
-@keyframes map_anime {
-    0% {
-        transform: translateY(0px);
-    }
-
-    100% {
-        transform: translateY(700px);
-    }
-}
-
-/* /anime map*/
 .contact_map iframe {
     margin-top: 20px;
-    /* opacity: .95; */
 }
