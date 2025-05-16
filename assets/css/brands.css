@@ -35,10 +35,6 @@
     padding: 0px 40px;
     cursor: pointer;
 
-    &:hover .brand__logo img {
-        filter: grayscale(0%);
-    }
-
     .brand__logo {
         display: flex;
         justify-content: center;
@@ -50,12 +46,7 @@
             width: 100%;
             height: auto;
             object-fit: contain;
-            /* filter: grayscale(90%); */
         }
-
-        /* &:hover img {
-            filter: grayscale(0%);
-        } */
     }
 
     & .brand__title {
