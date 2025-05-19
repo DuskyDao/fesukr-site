@@ -137,3 +137,13 @@ document.querySelector('.hamburger').addEventListener('click', function () {
 //         document.querySelector('.mobile__nav').classList.remove('active');
 //     });
 // });
+
+// brand
+document.querySelectorAll('.brand').forEach(card => {
+    card.addEventListener('click', (e) => {
+        // Предотвращаем переключение состояния при клике на кнопку
+        if (e.target.tagName !== 'BUTTON') {
+            card.classList.toggle('active');
+        }
+    });
+});

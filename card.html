@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover and Tap Blur Slide Effect</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .card {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            height: 400px;
+            background: url('https://via.placeholder.com/300x400') no-repeat center/cover;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            font-size: clamp(16px, 5vw, 18px);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .card.active .overlay {
+            transform: translateX(0);
+        }
+
+        .card:hover .overlay {
+            transform: translateX(0);
+        }
+
+        .overlay h2 {
+            color: white;
+            margin: 0 0 20px;
+            font-size: clamp(20px, 6vw, 24px);
+            text-align: center;
+        }
+
+        .overlay button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: clamp(14px, 4vw, 16px);
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .overlay button:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .card {
+                height: 350px;
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="text">Описание карточки</div>
+        <div class="overlay">
+            <h2>Заголовок</h2>
+            <a href="https://www.facebook.com" target="_blank">
+                <button>Перейти на Facebook</button>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                // Предотвращаем переключение состояния при клике на кнопку
+                if (e.target.tagName !== 'BUTTON') {
+                    card.classList.toggle('active');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

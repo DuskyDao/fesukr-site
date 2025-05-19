@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Слайдер</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .slider-container {
+            perspective: 1000px;
+        }
+
+        .slider-item {
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            transform-style: preserve-3d;
+        }
+
+        .slider-item.active {
+            transform: translateX(0) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+
+        .slider-item.prev {
+            transform: translateX(-80%) scale(0.8);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .slider-item.next {
+            transform: translateX(80%) scale(0.8);
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .slider-dot {
+            transition: all 0.3s ease;
+        }
+
+        .slider-dot.active {
+            transform: scale(1.2);
+            background-color: #3b82f6;
+        }
+
+        .slide-content {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="w-full max-w-4xl mx-auto">
+        <div class="slider-container relative h-96">
+            <!-- Слайд 1 -->
+            <div class="slider-item active absolute inset-0 flex items-center justify-center">
+                <div class="slide-content rounded-xl p-8 w-4/5 h-64 flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-chart-line text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Аналитика данных</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4 flex-grow">Наши инструменты аналитики помогают выявлять скрытые
+                        тенденции и принимать обоснованные бизнес-решения на основе данных.</p>
+                    <button
+                        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg self-start transition duration-300">
+                        Узнать больше
+                    </button>
+                </div>
+            </div>
+
+            <!-- Слайд 2 -->
+            <div class="slider-item next absolute inset-0 flex items-center justify-center">
+                <div class="slide-content rounded-xl p-8 w-4/5 h-64 flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-lock text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Безопасность</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4 flex-grow">Многоуровневая защита данных с использованием современных
+                        технологий шифрования и аутентификации.</p>
+                    <button
+                        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg self-start transition duration-300">
+                        Узнать больше
+                    </button>
+                </div>
+            </div>
+
+            <!-- Слайд 3 -->
+            <div class="slider-item absolute inset-0 flex items-center justify-center">
+                <div class="slide-content rounded-xl p-8 w-4/5 h-64 flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-purple-500 flex items-center justify-center text-white mr-4">
+                            <i class="fas fa-cloud text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Облачные решения</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4 flex-grow">Масштабируемые облачные сервисы для хранения и обработки
+                        данных с высокой доступностью и надежностью.</p>
+                    <button
+                        class="bg-purple-500 hover:bg-purple-600 text-white px-4 py-2 rounded-lg self-start transition duration-300">
+                        Узнать больше
+                    </button>
+                </div>
+            </div>
+
+            <!-- Навигационные стрелки -->
+            <button id="prev"
+                class="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white w-10 h-10 rounded-full shadow-md flex items-center justify-center text-gray-700 hover:text-blue-500 transition duration-300">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="next"
+                class="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white w-10 h-10 rounded-full shadow-md flex items-center justify-center text-gray-700 hover:text-blue-500 transition duration-300">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Индикаторы -->
+        <div class="flex justify-center mt-8 space-x-2">
+            <button class="slider-dot w-3 h-3 rounded-full bg-gray-300 active" data-index="0"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-gray-300" data-index="1"></button>
+            <button class="slider-dot w-3 h-3 rounded-full bg-gray-300" data-index="2"></button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.slider-item');
+            const dots = document.querySelectorAll('.slider-dot');
+            const prevBtn = document.getElementById('prev');
+            const nextBtn = document.getElementById('next');
+            let currentIndex = 0;
+
+            // Инициализация слайдера
+            function updateSlider() {
+                slides.forEach((slide, index) => {
+                    slide.classList.remove('active', 'prev', 'next');
+
+                    if (index === currentIndex) {
+                        slide.classList.add('active');
+                    } else if (index === (currentIndex + 1) % slides.length) {
+                        slide.classList.add('next');
+                    } else if (index === (currentIndex - 1 + slides.length) % slides.length) {
+                        slide.classList.add('prev');
+                    }
+                });
+
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+
+            // Переключение слайдов
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+            }
+
+            // Следующий слайд
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % slides.length;
+                updateSlider();
+            }
+
+            // Предыдущий слайд
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateSlider();
+            }
+
+            // Автопрокрутка
+            let slideInterval = setInterval(nextSlide, 5000);
+
+            // Обработчики событий
+            nextBtn.addEventListener('click', function () {
+                clearInterval(slideInterval);
+                nextSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            prevBtn.addEventListener('click', function () {
+                clearInterval(slideInterval);
+                prevSlide();
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', function () {
+                    clearInterval(slideInterval);
+                    goToSlide(parseInt(this.dataset.index));
+                    slideInterval = setInterval(nextSlide, 5000);
+                });
+            });
+
+            // Инициализация
+            updateSlider();
+
+            // Пауза при наведении
+            const sliderContainer = document.querySelector('.slider-container');
+            sliderContainer.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            sliderContainer.addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 5000));
+        });
+    </script>
+</body>
+
+</html>
