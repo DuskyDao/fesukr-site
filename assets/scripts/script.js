@@ -143,23 +143,87 @@ document.querySelector('.hamburger').addEventListener('click', function () {
 //     card.addEventListener('click', (e) => {
 //         // Предотвращаем переключение состояния при клике на кнопку
 //         if (e.target.tagName !== 'BUTTON') {
+//             // Убираем класс active у всех карточек
+//             document.querySelectorAll('.brand').forEach(otherCard => {
+//                 if (otherCard !== card) {
+//                     otherCard.classList.remove('active');
+//                 }
+//             });
+//             // Переключаем класс active для текущей карточки
 //             card.classList.toggle('active');
 //         }
 //     });
 // });
 
+// brand upd
 document.querySelectorAll('.brand').forEach(card => {
+    let timeoutId = null;
+
+    // Функция для запуска таймера
+    const startTimeout = () => {
+        // Очищаем предыдущий таймер, если он существует
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+        // Устанавливаем новый таймер на 5 секунд
+        timeoutId = setTimeout(() => {
+            card.classList.remove('active');
+        }, 5000);
+    };
+
+    // Обработчик клика
     card.addEventListener('click', (e) => {
-        // Предотвращаем переключение состояния при клике на кнопку
         if (e.target.tagName !== 'BUTTON') {
-            // Убираем класс active у всех карточек
+            // Убираем active у всех других карточек
             document.querySelectorAll('.brand').forEach(otherCard => {
                 if (otherCard !== card) {
                     otherCard.classList.remove('active');
+                    // Очищаем таймер для неактивных карточек
+                    const otherTimeoutId = otherCard.dataset.timeoutId;
+                    if (otherTimeoutId) {
+                        clearTimeout(otherTimeoutId);
+                        otherCard.dataset.timeoutId = '';
+                    }
                 }
             });
-            // Переключаем класс active для текущей карточки
+            // Переключаем active для текущей карточки
             card.classList.toggle('active');
+            // Запускаем таймер, если карточка активна
+            if (card.classList.contains('active')) {
+                startTimeout();
+            } else {
+                // Очищаем таймер, если карточка больше не активна
+                if (timeoutId) {
+                    clearTimeout(timeoutId);
+                    timeoutId = null;
+                }
+            }
+        }
+    });
+
+    // Обработчик наведения (для десктопов)
+    card.addEventListener('mouseenter', () => {
+        // Убираем active у всех других карточек
+        document.querySelectorAll('.brand').forEach(otherCard => {
+            if (otherCard !== card) {
+                otherCard.classList.remove('active');
+                const otherTimeoutId = otherCard.dataset.timeoutId;
+                if (otherTimeoutId) {
+                    clearTimeout(otherTimeoutId);
+                    otherCard.dataset.timeoutId = '';
+                }
+            }
+        });
+        // Активируем текущую карточку
+        card.classList.add('active');
+        startTimeout();
+    });
+
+    // Обработчик ухода курсора
+    card.addEventListener('mouseleave', () => {
+        // Запускаем таймер, если карточка активна
+        if (card.classList.contains('active')) {
+            startTimeout();
         }
     });
 });
