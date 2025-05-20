@@ -139,10 +139,26 @@ document.querySelector('.hamburger').addEventListener('click', function () {
 // });
 
 // brand
+// document.querySelectorAll('.brand').forEach(card => {
+//     card.addEventListener('click', (e) => {
+//         // Предотвращаем переключение состояния при клике на кнопку
+//         if (e.target.tagName !== 'BUTTON') {
+//             card.classList.toggle('active');
+//         }
+//     });
+// });
+
 document.querySelectorAll('.brand').forEach(card => {
     card.addEventListener('click', (e) => {
         // Предотвращаем переключение состояния при клике на кнопку
         if (e.target.tagName !== 'BUTTON') {
+            // Убираем класс active у всех карточек
+            document.querySelectorAll('.brand').forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.classList.remove('active');
+                }
+            });
+            // Переключаем класс active для текущей карточки
             card.classList.toggle('active');
         }
     });
