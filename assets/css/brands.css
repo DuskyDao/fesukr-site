@@ -36,7 +36,14 @@
     padding: 0px 50px 50px 50px;
     overflow: hidden;
     cursor: pointer;
-    touch-action: manipulation;
+    /* touch-action: manipulation; */
+
+    touch-action: auto;
+    -webkit-tap-highlight-color: transparent;
+    /* Убираем эффект выделения */
+    -webkit-user-select: none;
+    /* Предотвращаем выделение текста */
+    user-select: none;
 
     .brand__logo {
         display: flex;

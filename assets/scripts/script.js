@@ -158,8 +158,7 @@ document.querySelector('.hamburger').addEventListener('click', function () {
 // brand upd
 document.querySelectorAll('.brand').forEach(card => {
     let timeoutId = null;
-    let touchStartTime = null;
-    let touchMoved = false;
+    let isTouching = false;
 
     // Функция для запуска таймера
     const startTimeout = () => {
@@ -187,8 +186,8 @@ document.querySelectorAll('.brand').forEach(card => {
         card.dataset.timeoutId = startTimeout();
     };
 
-    // Обработчик клика (для десктопов)
-    const handleClick = (e) => {
+    // Общая функция обработки взаимодействия
+    const handleInteraction = (e) => {
         if (!e.target.closest('button')) {
             if (card.classList.contains('active')) {
                 card.classList.remove('active');
@@ -203,39 +202,26 @@ document.querySelectorAll('.brand').forEach(card => {
         }
     };
 
-    // Обработчик начала касания
-    card.addEventListener('touchstart', (e) => {
-        touchStartTime = Date.now();
-        touchMoved = false;
+    // Обработчик касания
+    card.addEventListener('touchstart', () => {
+        isTouching = true;
     }, { passive: true });
 
-    // Обработчик движения касания (для определения скроллинга)
-    card.addEventListener('touchmove', () => {
-        touchMoved = true;
-    }, { passive: true });
-
-    // Обработчик окончания касания
     card.addEventListener('touchend', (e) => {
-        if (!e.target.closest('button') && !touchMoved) {
-            // Проверяем, было ли касание коротким (не скроллинг)
-            const touchDuration = Date.now() - touchStartTime;
-            if (touchDuration < 300) { // Короткое касание (меньше 300 мс)
-                if (card.classList.contains('active')) {
-                    card.classList.remove('active');
-                    if (timeoutId) {
-                        clearTimeout(timeoutId);
-                        timeoutId = null;
-                        card.dataset.timeoutId = '';
-                    }
-                } else {
-                    activateCard();
-                }
-            }
+        if (isTouching && !e.target.closest('button')) {
+            handleInteraction(e);
+            isTouching = false;
         }
     }, { passive: true });
 
-    card.addEventListener('click', handleClick);
+    // Обработчик клика (для десктопов)
+    card.addEventListener('click', (e) => {
+        if (!isTouching) { // Игнорируем клики, вызванные касанием
+            handleInteraction(e);
+        }
+    });
 
+    // Обработчики наведения
     card.addEventListener('mouseenter', () => {
         activateCard();
     });
