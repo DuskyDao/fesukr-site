@@ -144,8 +144,9 @@
 }
 
 .brand__title-desc {
-    padding: 0 20px;
+    /* padding: 0 30px; */
     margin-top: 10px;
+    text-align: center;
     font-size: 1rem;
     font-weight: 500;
     color: var(--light-color);
@@ -177,7 +178,11 @@
         padding: 0px 40px 40px 40px;
     }
 
-    .brand__logo {
-        height: 10px;
-    }
+    /* .brand__logo {
+        height: 100px;
+
+        & img {
+            height: 100px;
+        }
+    } */
 }
