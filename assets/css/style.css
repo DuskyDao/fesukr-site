@@ -225,7 +225,6 @@ html {
 /* top block socials */
 .header__top {
     height: 90px;
-    /* background-color: var(--dark-background); */
     position: relative;
     z-index: 9;
 }
@@ -320,10 +319,6 @@ html {
     display: flex;
     justify-content: end;
     width: 100%;
-
-    /* &>:nth-child(-n+2) {
-        display: none;
-    } */
 
     &>a {
         margin-right: 10px;
@@ -574,11 +569,12 @@ html {
 /* Мобильное меню */
 .mobile__nav {
     position: absolute;
+
+    padding-bottom: 30px;
     width: 100%;
     display: none;
     background: var(--blue-color);
     transition: all 0.3s ease;
-    padding-bottom: 20px;
     z-index: 9;
 }
 
@@ -608,7 +604,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 10px;
+    gap: 15px;
     z-index: 9;
 }
 
@@ -682,9 +678,9 @@ html {
     }
 
     .mobile__nav>.default__container {
-        padding-top: 10px;
-        /* border-top: solid 3px var(--light-color); */
-        border-top: solid 3px var(--foxy-color);
+        padding-top: 20px;
+        border-top: solid 3px var(--light-color);
+        /* border-top: solid 3px var(--foxy-color); */
         /* border-top: solid 3px var(--dark-color); */
     }
 }
