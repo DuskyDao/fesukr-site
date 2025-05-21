@@ -117,11 +117,14 @@
     align-items: center;
     transform: translateX(-100%);
     transition: transform 0.5s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    border-radius: var(--b-r16);
 }
 
-.brand.active .brand__overlay {
+/* .brand.active .brand__overlay {
     transform: translateX(0);
-}
+} */
 
 .brand:hover .brand__overlay {
     transform: translateX(0);
