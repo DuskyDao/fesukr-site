@@ -156,88 +156,122 @@ document.querySelector('.hamburger').addEventListener('click', function () {
 // });
 
 // brand upd
-document.querySelectorAll('.brand').forEach(card => {
-    let timeoutId = null;
-    let isTouchDevice = false;
+// document.querySelectorAll('.brand').forEach(card => {
+//     let timeoutId = null;
+//     let isTouchDevice = false;
 
-    // Функция для запуска таймера
-    const startTimeout = () => {
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-        }
-        timeoutId = setTimeout(() => {
-            card.classList.remove('active');
-            timeoutId = null;
-            card.dataset.timeoutId = '';
-        }, 5000);
-    };
+//     // Функция для запуска таймера
+//     const startTimeout = () => {
+//         if (timeoutId) {
+//             clearTimeout(timeoutId);
+//         }
+//         timeoutId = setTimeout(() => {
+//             card.classList.remove('active');
+//             timeoutId = null;
+//             card.dataset.timeoutId = '';
+//         }, 3000);
+//     };
 
-    // Функция для активации карточки
-    const activateCard = () => {
-        // Снимаем active с других карточек
-        document.querySelectorAll('.brand').forEach(otherCard => {
-            if (otherCard !== card) {
-                otherCard.classList.remove('active');
-                if (otherCard.dataset.timeoutId) {
-                    clearTimeout(otherCard.dataset.timeoutId);
-                    otherCard.dataset.timeoutId = '';
-                }
-            }
+//     // Функция для активации карточки
+//     const activateCard = () => {
+//         // Снимаем active с других карточек
+//         document.querySelectorAll('.brand').forEach(otherCard => {
+//             if (otherCard !== card) {
+//                 otherCard.classList.remove('active');
+//                 if (otherCard.dataset.timeoutId) {
+//                     clearTimeout(otherCard.dataset.timeoutId);
+//                     otherCard.dataset.timeoutId = '';
+//                 }
+//             }
+//         });
+//         card.classList.add('active');
+//         card.dataset.timeoutId = timeoutId;
+//         startTimeout();
+//     };
+
+//     // Функция для деактивации текущей карточки
+//     const deactivateCard = () => {
+//         card.classList.remove('active');
+//         if (timeoutId) {
+//             clearTimeout(timeoutId);
+//             timeoutId = null;
+//             card.dataset.timeoutId = '';
+//         }
+//     };
+
+//     // Определяем, является ли устройство сенсорным
+//     const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+//     // Обработчик для мобильных (touchend)
+//     if (isTouch) {
+//         card.addEventListener('touchend', (e) => {
+//             // Игнорируем касания по кнопке
+//             if (!e.target.closest('button')) {
+//                 if (card.classList.contains('active')) {
+//                     deactivateCard();
+//                 } else {
+//                     activateCard();
+//                 }
+//             }
+//         }, { passive: true });
+//     }
+
+//     // Обработчик для десктопов (click)
+//     card.addEventListener('click', (e) => {
+//         // Игнорируем клики на сенсорных устройствах
+//         if (!isTouch && !e.target.closest('button')) {
+//             if (card.classList.contains('active')) {
+//                 deactivateCard();
+//             } else {
+//                 activateCard();
+//             }
+//         }
+//     }, { passive: true });
+
+//     // Обработчики наведения для десктопов
+//     card.addEventListener('mouseenter', () => {
+//         if (!isTouch) {
+//             activateCard();
+//         }
+//     });
+
+//     card.addEventListener('mouseleave', () => {
+//         if (!isTouch && card.classList.contains('active')) {
+//             startTimeout();
+//         }
+//     });
+// });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const brands = document.querySelectorAll('.brand');
+    const maxMobileWidth = 768; // Порог для мобильных устройств
+
+    // Проверка, является ли устройство мобильным
+    const isMobile = () => window.innerWidth <= maxMobileWidth;
+
+    // Обработчик касания для каждого .brand
+    brands.forEach(brand => {
+        brand.addEventListener('touchstart', (event) => {
+            // Проверяем, что это мобильное устройство
+            if (!isMobile()) return;
+
+            // Находим .brand__overlay внутри текущего .brand
+            const overlay = brand.querySelector('.brand__overlay');
+
+            // Переключаем класс .active
+            brand.classList.toggle('active');
+
+            // Не блокируем прокрутку (event.preventDefault() не используется)
         });
-        card.classList.add('active');
-        card.dataset.timeoutId = timeoutId;
-        startTimeout();
-    };
-
-    // Функция для деактивации текущей карточки
-    const deactivateCard = () => {
-        card.classList.remove('active');
-        if (timeoutId) {
-            clearTimeout(timeoutId);
-            timeoutId = null;
-            card.dataset.timeoutId = '';
-        }
-    };
-
-    // Определяем, является ли устройство сенсорным
-    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
-
-    // Обработчик для мобильных (touchend)
-    if (isTouch) {
-        card.addEventListener('touchend', (e) => {
-            // Игнорируем касания по кнопке
-            if (!e.target.closest('button')) {
-                if (card.classList.contains('active')) {
-                    deactivateCard();
-                } else {
-                    activateCard();
-                }
-            }
-        }, { passive: true });
-    }
-
-    // Обработчик для десктопов (click)
-    card.addEventListener('click', (e) => {
-        // Игнорируем клики на сенсорных устройствах
-        if (!isTouch && !e.target.closest('button')) {
-            if (card.classList.contains('active')) {
-                deactivateCard();
-            } else {
-                activateCard();
-            }
-        }
-    }, { passive: true });
-
-    // Обработчики наведения для десктопов
-    card.addEventListener('mouseenter', () => {
-        if (!isTouch) {
-            activateCard();
-        }
     });
 
-    card.addEventListener('mouseleave', () => {
-        if (!isTouch && card.classList.contains('active')) {
-            startTimeout();
+    // Обработка изменения размера окна
+    window.addEventListener('resize', () => {
+        if (!isMobile()) {
+            // Убираем класс .active на десктопе для всех .brand
+            brands.forEach(brand => {
+                brand.classList.remove('active');
+            });
         }
     });
 });
