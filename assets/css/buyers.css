@@ -42,7 +42,6 @@
         align-items: center;
         gap: 20px;
         padding: 30px;
-        /* background-color: var(--white-blue-background); */
         background-color: rgba(243, 209, 165, 0.527);
         border-radius: var(--b-r16);
         box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);

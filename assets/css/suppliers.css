@@ -55,15 +55,7 @@ main ol {
 
 /* Стили для табов */
 .tabs {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
   margin-bottom: 4vw;
-}
-
-.tabs.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .tabs__nav {
@@ -104,15 +96,10 @@ main ol {
 
 .tabs__panel {
   display: none;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .tabs__panel.active {
   display: block;
-  opacity: 1;
-  transform: translateY(0);
 
   &>p,
   &>ul>li {
