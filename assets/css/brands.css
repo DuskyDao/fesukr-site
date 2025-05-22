@@ -16,9 +16,7 @@
 
 .brands__wrapper {
     display: grid;
-    /* grid-template-columns: repeat(3, 1fr); */
     grid-template-columns: repeat(auto-fit, minmax(370px, 1fr));
-    /* grid-template-rows: repeat(3, 1fr); */
     justify-items: center;
     margin: clamp(40px, 4vw, 60px) auto;
     gap: clamp(40px, 5vw, 50px);
@@ -37,13 +35,6 @@
     overflow: hidden;
     cursor: pointer;
 
-    /* touch-action: auto;
-    -webkit-tap-highlight-color: transparent;
-    /* Убираем эффект выделения */
-    /* -webkit-user-select: none; */
-    /* Предотвращаем выделение текста */
-    /* user-select: none; */
-
     .brand__logo {
         display: flex;
         justify-content: center;
@@ -59,8 +50,6 @@
     }
 
     .brand__desc {
-        /* height: 100%; */
-        /* text-align: center; */
 
         &>p {
             margin-top: 10px;
@@ -143,7 +132,6 @@
 }
 
 .brand__title-desc {
-    /* padding: 0 30px; */
     margin-top: 10px;
     text-align: center;
     font-size: 1rem;
@@ -176,12 +164,4 @@
         margin: 0 15px;
         padding: 0px 40px 40px 40px;
     }
-
-    /* .brand__logo {
-        height: 100px;
-
-        & img {
-            height: 100px;
-        }
-    } */
 }
