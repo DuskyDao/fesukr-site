@@ -166,17 +166,17 @@ document.addEventListener('DOMContentLoaded', () => {
         brand.addEventListener('click', (e) => {
             if (!isMobile()) return; // Работает только на мобильных устройствах
 
-            // Если уже есть активная карточка, убираем класс active
-            const currentActive = document.querySelector('.brand.active');
-            if (currentActive && currentActive !== brand) {
-                currentActive.classList.remove('active');
-            }
+            // Проверяем, является ли текущая карточка уже активной
+            const isActive = brand.classList.contains('active');
 
-            // Переключаем класс active на текущей карточке
-            brand.classList.toggle('active');
+            // Удаляем active со всех карточек
+            brands.forEach(b => b.classList.remove('active'));
 
-            // Прокручиваем к карточке, если она активна
-            if (brand.classList.contains('active')) {
+            // Если карточка не была активна, добавляем класс active
+            if (!isActive) {
+                brand.classList.add('active');
+
+                // Прокручиваем к карточке
                 brand.scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
