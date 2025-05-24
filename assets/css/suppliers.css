@@ -9,10 +9,71 @@ main ol {
   }
 }
 
-.suppliers__wrapper {
+.suppliers {
+  position: relative;
+  height: 380px;
+
+  & .suppliers__section-background {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--head__gradient), url(../img/page/suppliers/sklad2.jpg) center bottom / cover no-repeat fixed;
+    z-index: 2;
+  }
+}
+
+.suppliers__header {
+  position: absolute;
   display: flex;
-  gap: 30px;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+
+
+  & .suppliers__title {
+    font-size: 4rem;
+    color: var(--light-color);
+  }
+
+  & .suppliers__desc {
+    margin: 20px 0 50px 0;
+    font-size: 1.3rem;
+    color: var(--light-color);
+  }
+}
+
+/* supp-base */
+.supp-base__container {
   margin-top: 4vw;
+  padding: 40px;
+  background-color: var(--light-background);
+  border-radius: var(--b-r16);
+}
+
+.supp-base__header {
+  padding-left: 60px;
+
+  & .supp-base__title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dark-color);
+  }
+
+  & .supp-base__desc {
+    margin-top: 15px;
+  }
+}
+
+.supp-base__content {
+  margin-top: 2rem;
+  padding: 30px 20px;
+  background-color: var(--dark-background);
+  border-left: 5px solid var(--blue-color);
+  border-radius: 12px;
+  line-height: var(--line-h);
 }
 
 .suppliers__box {
@@ -78,7 +139,7 @@ main ol {
 }
 
 .tabs__button:hover,
-.tabs__button.active {
+.tabs__button.tab-active {
   background: inherit;
   color: var(--blue-color);
   border: 2px solid var(--blue-color);
@@ -98,7 +159,7 @@ main ol {
   display: none;
 }
 
-.tabs__panel.active {
+.tabs__panel.tab-active {
   display: block;
 
   &>p,

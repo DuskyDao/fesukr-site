@@ -1,4 +1,4 @@
-// Блок анимации при прокрутке
+// блок анимации при прокрутке
 function initObserver(elements) {
     if (!elements.length) return;
     const observer = new IntersectionObserver(
@@ -30,19 +30,19 @@ function initTabs() {
 
     function activateTab(button) {
         buttons.forEach((btn) => {
-            btn.classList.remove('tab-active');
+            btn.classList.remove('active');
             btn.setAttribute('aria-selected', 'false');
         });
         panels.forEach((panel) => {
-            panel.classList.remove('tab-active');
+            panel.classList.remove('active');
             panel.setAttribute('hidden', 'true');
         });
-        button.classList.add('tab-active');
+        button.classList.add('active');
         button.setAttribute('aria-selected', 'true');
         const panelId = button.getAttribute('aria-controls');
         const panel = document.getElementById(panelId);
         if (panel) {
-            panel.classList.add('tab-active');
+            panel.classList.add('active');
             panel.removeAttribute('hidden');
         }
     }
@@ -110,28 +110,56 @@ function initDetails() {
             content.classList.add('open');
             content.style.height = `${content.scrollHeight}px`;
             setTimeout(() => {
-                content.style.height = 'auto';
-            }, 500);
+                content.style.height = 'auto'; // Адаптация к изменениям контента
+            }, 500); // Синхронизировано с transition: 0.5s
         });
     });
 }
 
-// Инициализация брендов
-function initBrands() {
-    const brands = document.querySelectorAll('.brand');
-    if (!brands.length) return;
 
+// Инициализация
+document.addEventListener('DOMContentLoaded', () => {
+    initObserver(document.querySelectorAll('.animate-y, .animate-y-d, .animate-x, .animate-x-d, .animate-scale, .animate-scale-d'));
+    initTabs();
+    initDetails();
+});
+
+
+// hamburger +nav menu
+document.querySelector('.hamburger').addEventListener('click', function () {
+    this.classList.toggle('active');
+    document.querySelector('.mobile__nav').classList.toggle('active');
+});
+// close nav (optional)
+// document.querySelectorAll('.mobile__nav a').forEach(link => {
+//     link.addEventListener('click', () => {
+//         document.querySelector('.hamburger').classList.remove('active');
+//         document.querySelector('.mobile__nav').classList.remove('active');
+//     });
+// });
+
+// brand upd
+document.addEventListener('DOMContentLoaded', () => {
+    const brands = document.querySelectorAll('.brand');
+
+    // Проверяем, является ли устройство мобильным
     const isMobile = () => window.innerWidth <= 560;
 
     brands.forEach(brand => {
         brand.addEventListener('click', (e) => {
-            if (!isMobile()) return;
+            if (!isMobile()) return; // Работает только на мобильных устройствах
 
-            const isActive = brand.classList.contains('brand-active');
-            brands.forEach(b => b.classList.remove('brand-active'));
+            // Проверяем, является ли текущая карточка уже активной
+            const isActive = brand.classList.contains('active');
 
+            // Удаляем active со всех карточек
+            brands.forEach(b => b.classList.remove('active'));
+
+            // Если карточка не была активна, добавляем класс active
             if (!isActive) {
-                brand.classList.add('brand-active');
+                brand.classList.add('active');
+
+                // Прокручиваем к карточке
                 brand.scrollIntoView({
                     behavior: 'smooth',
                     block: 'center'
@@ -140,43 +168,10 @@ function initBrands() {
         });
     });
 
-    // Оптимизация обработки resize
-    let resizeTimeout;
+    // Убираем класс active при изменении размера окна (если переходим на десктоп)
     window.addEventListener('resize', () => {
-        clearTimeout(resizeTimeout);
-        resizeTimeout = setTimeout(() => {
-            if (!isMobile()) {
-                brands.forEach(brand => brand.classList.remove('brand-active'));
-            }
-        }, 100);
+        if (!isMobile()) {
+            brands.forEach(brand => brand.classList.remove('active'));
+        }
     });
-}
-
-// Гамбургер-меню
-function initHamburger() {
-    const hamburger = document.querySelector('.hamburger');
-    const mobileNav = document.querySelector('.mobile__nav');
-    if (!hamburger || !mobileNav) return;
-
-    hamburger.addEventListener('click', function () {
-        this.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-    });
-
-    // Опционально: закрытие меню при клике на ссылку
-    document.querySelectorAll('.mobile__nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mobileNav.classList.remove('active');
-        });
-    });
-}
-
-// Основная инициализация
-document.addEventListener('DOMContentLoaded', () => {
-    initObserver(document.querySelectorAll('.animate-y, .animate-y-d, .animate-x, .animate-x-d, .animate-scale, .animate-scale-d'));
-    initTabs();
-    initDetails();
-    initBrands();
-    initHamburger();
 });
