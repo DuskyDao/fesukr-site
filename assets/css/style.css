@@ -94,6 +94,25 @@ img {
     background-color: var(--blue-color);
 }
 
+.line-gradient {
+    position: relative;
+    margin-top: 4vw;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 3px;
+        background: var(--blue-color);
+        border-radius: 3px;
+    }
+}
+
 /* animate */
 .animate-x {
     transform: translateX(-20px);

@@ -72,8 +72,31 @@ main ol {
   padding: 30px 20px;
   background-color: var(--dark-background);
   border-left: 5px solid var(--blue-color);
-  border-radius: 12px;
+  border-radius: 8px;
   line-height: var(--line-h);
+}
+
+/* supp-desc */
+.supp-desc__wrapper {
+  display: flex;
+  margin-top: 4vw;
+  gap: 30px;
+}
+
+.supp-desc__container {
+  padding: 40px;
+  background-color: var(--light-background);
+  border-radius: var(--b-r16);
+
+  & .supp-desc__title {
+    padding-left: 60px;
+    font-size: 1.3rem;
+    color: var(--dark-color);
+  }
+
+  & .supp-desc__content {
+    margin-top: 15px;
+  }
 }
 
 .suppliers__box {
