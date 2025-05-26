@@ -9,11 +9,11 @@ main ol {
   }
 }
 
-.suppliers {
+.supp {
   position: relative;
   height: 380px;
 
-  & .suppliers__section-background {
+  & .supp__section-background {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -23,7 +23,7 @@ main ol {
   }
 }
 
-.suppliers__header {
+.supp__header {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -32,13 +32,12 @@ main ol {
   width: 100%;
   z-index: 99;
 
-
-  & .suppliers__title {
+  & .supp__title {
     font-size: 4rem;
     color: var(--light-color);
   }
 
-  & .suppliers__desc {
+  & .supp__desc {
     margin: 20px 0 50px 0;
     font-size: 1.3rem;
     color: var(--light-color);
@@ -81,8 +80,8 @@ main ol {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: clamp(20px, 6vw, 60px);
   margin-top: 4vw;
-  gap: clamp(20px, 4vw, 50px);
 }
 
 .supp-desc__container {
@@ -97,8 +96,7 @@ main ol {
     color: var(--dark-color);
   }
 
-  & .supp-desc__content,
-  .supp-contact__content {
+  & .supp-desc__content {
     margin-top: 20px;
     line-height: var(--line-h);
 
@@ -108,12 +106,15 @@ main ol {
   }
 }
 
-
-
-
-/* Стили для табов */
+/* tabs */
 .tabs {
-  margin-bottom: 4vw;
+  margin-top: 4vw;
+  padding: 4vw 0;
+  /* background-color: var(--white-blue-background); */
+
+  & .title {
+    margin-top: 0;
+  }
 }
 
 .tabs__nav {
@@ -166,12 +167,17 @@ main ol {
 }
 
 /*   */
-.suppliers {
+.supp-new {
 
   & p,
   & ul>li {
     line-height: var(--line-h);
   }
+}
+
+.supp-new__title {
+
+  text-align: center;
 }
 
 .table__dsc {
