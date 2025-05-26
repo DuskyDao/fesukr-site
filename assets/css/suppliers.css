@@ -79,62 +79,36 @@ main ol {
 /* supp-desc */
 .supp-desc__wrapper {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 4vw;
-  gap: 30px;
+  gap: clamp(20px, 4vw, 50px);
 }
 
 .supp-desc__container {
   padding: 40px;
+  max-width: 650px;
   background-color: var(--light-background);
   border-radius: var(--b-r16);
 
   & .supp-desc__title {
-    padding-left: 60px;
-    font-size: 1.3rem;
+    padding-left: 50px;
+    font-size: 1.4rem;
     color: var(--dark-color);
   }
 
-  & .supp-desc__content {
-    margin-top: 15px;
-  }
-}
-
-.suppliers__box {
-  /* min-width: 400px; */
-  flex: 1;
-
-  &>h2 {
-    margin-top: 0;
-    text-align: left;
-  }
-
-  & p {
-    margin-top: 10px;
+  & .supp-desc__content,
+  .supp-contact__content {
+    margin-top: 20px;
     line-height: var(--line-h);
+
+    &>p {
+      margin-top: 10px;
+    }
   }
 }
 
-.suppliers__img {
-  flex: 1;
-  border-radius: var(--b-r16);
 
-  & img {
-    border-radius: var(--b-r16);
-  }
-}
-
-.supplies__contact__wrapper {
-  display: flex;
-  gap: 20px;
-  margin-top: 20px;
-
-  & .supp__contact {
-    flex: 1;
-    padding: 20px;
-    background-color: var(--blue-color);
-    border-radius: var(--b-r16);
-  }
-}
 
 
 /* Стили для табов */
