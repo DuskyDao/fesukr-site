@@ -117,41 +117,6 @@ function initDetails() {
 }
 
 // Инициализация брендов
-// function initBrands() {
-//     const brands = document.querySelectorAll('.brand');
-//     if (!brands.length) return;
-
-//     const isMobile = () => window.innerWidth <= 560;
-
-//     brands.forEach(brand => {
-//         brand.addEventListener('click', (e) => {
-//             if (!isMobile()) return;
-
-//             const isActive = brand.classList.contains('brand-active');
-//             brands.forEach(b => b.classList.remove('brand-active'));
-
-//             if (!isActive) {
-//                 brand.classList.add('brand-active');
-//                 brand.scrollIntoView({
-//                     behavior: 'smooth',
-//                     block: 'center'
-//                 });
-//             }
-//         });
-//     });
-
-//     // Оптимизация обработки resize
-//     let resizeTimeout;
-//     window.addEventListener('resize', () => {
-//         clearTimeout(resizeTimeout);
-//         resizeTimeout = setTimeout(() => {
-//             if (!isMobile()) {
-//                 brands.forEach(brand => brand.classList.remove('brand-active'));
-//             }
-//         }, 100);
-//     });
-// }
-
 function initBrands() {
     const brands = document.querySelectorAll('.brand');
 
@@ -197,13 +162,13 @@ function initHamburger() {
         mobileNav.classList.toggle('active');
     });
 
-    // Опционально: закрытие меню при клике на ссылку
-    document.querySelectorAll('.mobile__nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mobileNav.classList.remove('active');
-        });
-    });
+    // // Опционально: закрытие меню при клике на ссылку
+    // document.querySelectorAll('.mobile__nav a').forEach(link => {
+    //     link.addEventListener('click', () => {
+    //         hamburger.classList.remove('active');
+    //         mobileNav.classList.remove('active');
+    //     });
+    // });
 }
 
 // Основная инициализация
