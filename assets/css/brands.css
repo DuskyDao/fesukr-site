@@ -117,8 +117,7 @@
     border-radius: var(--b-r16);
 }
 
-.brand.brand-active .brand__overlay,
-.brand:hover .brand__overlay {
+.brand.brand-active .brand__overlay {
     width: 100%;
     opacity: 1;
 }
