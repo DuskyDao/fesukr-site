@@ -594,7 +594,7 @@ html {
     display: none;
     background: var(--blue-color);
     transition: all 0.3s ease;
-    z-index: 9;
+    z-index: 999;
 }
 
 .mobile__nav.active {
@@ -624,7 +624,7 @@ html {
     flex-direction: column;
     align-items: start;
     gap: 15px;
-    z-index: 9;
+    z-index: 999;
 }
 
 .mobile__nav a {
