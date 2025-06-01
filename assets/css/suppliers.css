@@ -50,15 +50,26 @@ main ol {
   padding: 40px;
   background-color: var(--light-background);
   border-radius: var(--b-r16);
+  box-shadow: 0 .375rem .875rem 0 rgba(0, 0, 0, .13), 0 .0625rem .25rem 0 rgba(0, 0, 0, .11);
 }
 
 .supp-base__header {
-  padding-left: 60px;
+  position: relative;
+  padding-left: 80px;
 
   & .supp-base__title {
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--dark-color);
+  }
+
+  & .supp-base__title::before {
+    content: '';
+    position: absolute;
+    background: url('../img/icons/supplier.svg') center center / contain no-repeat;
+    width: 60px;
+    height: 60px;
+    left: 0;
   }
 
   & .supp-base__desc {
@@ -85,26 +96,89 @@ main ol {
 }
 
 .supp-desc__container {
-  padding: 40px;
+  position: relative;
+  padding: 35px;
   max-width: 650px;
-  background-color: var(--light-background);
   border-radius: var(--b-r16);
+  box-shadow: 0 .375rem .875rem 0 rgba(0, 0, 0, .13), 0 .0625rem .25rem 0 rgba(0, 0, 0, .11);
 
   & .supp-desc__title {
-    padding-left: 50px;
+    padding-left: 45px;
     font-size: 1.4rem;
     color: var(--dark-color);
   }
 
+  & .supp-desc__title::before {
+    content: '';
+    position: absolute;
+
+  }
+
   & .supp-desc__content {
-    margin-top: 20px;
+    margin-top: 25px;
     line-height: var(--line-h);
 
     &>p {
       margin-top: 10px;
     }
+
+    & a {
+      position: relative;
+    }
   }
 }
+
+.supp-desc__container:first-child {
+  background-color: rgb(22 163 74 / .4);
+}
+
+.supp-desc__container:last-child {
+  background-color: rgb(88 22 163 / 0.4);
+}
+
+& .supp-desc__container:first-child .supp-desc__title::before {
+  width: 35px;
+  height: 35px;
+  top: 33px;
+  left: 36px;
+  background: url('../img/icons/supp.svg') center center / contain no-repeat;
+}
+
+& .supp-desc__container:last-child .supp-desc__title::before {
+  width: 34px;
+  height: 34px;
+  top: 29px;
+  left: 33px;
+  background: url('../img/icons/supp2.svg') center center / contain no-repeat;
+}
+
+.supp-desc__content address {
+  margin-top: 15px;
+
+  & a {
+    padding-left: 23px;
+    font-style: normal;
+    color: var(--dark-back);
+
+    &::before {
+      position: absolute;
+      content: '';
+      width: 18px;
+      height: 18px;
+      top: 1px;
+      left: 0px;
+    }
+
+    &:first-child:before {
+      background: url('../img/icons/mail-dark.svg') center center / contain no-repeat;
+    }
+
+    &:last-child::before {
+      background: url('../img/icons/zzz.svg') center center / contain no-repeat;
+    }
+  }
+}
+
 
 /* tabs */
 .tabs {
