@@ -174,7 +174,7 @@ main ol {
     }
 
     &:last-child::before {
-      background: url('../img/icons/zzz.svg') center center / contain no-repeat;
+      background: url('../img/icons/phone-dark.svg') center center / contain no-repeat;
     }
   }
 }
@@ -182,13 +182,18 @@ main ol {
 
 /* tabs */
 .tabs {
-  margin-top: 4vw;
-  padding: 4vw 0;
-  /* background-color: var(--white-blue-background); */
+  /* margin-top: 4vw; */
 
   & .title {
     margin-top: 0;
   }
+}
+
+.tabs__background {
+  padding: 3vw;
+  background-color: var(--white-blue-background);
+  border-radius: var(--b-r16);
+  box-shadow: 0 .375rem .875rem 0 rgba(0, 0, 0, .13), 0 .0625rem .25rem 0 rgba(0, 0, 0, .11);
 }
 
 .tabs__nav {
