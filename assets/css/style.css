@@ -96,7 +96,7 @@ img {
 
 .line-gradient {
     position: relative;
-    margin: 4vw 0;
+    margin: 4vw 0 3vw 0;
     height: 1px;
     background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
 
