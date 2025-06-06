@@ -171,6 +171,36 @@ function initHamburger() {
     // });
 }
 
+// Инициализация слайдера
+function initSlider() {
+    const slider = document.getElementById('slider');
+    const dots = document.querySelectorAll('.dot');
+    if (!slider || !dots.length) return;
+
+    let currentSlide = 0;
+
+    function goToSlide(index) {
+        currentSlide = index;
+        slider.style.transform = `translateX(-${currentSlide * 33.33}%)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % 3;
+        goToSlide(currentSlide);
+    }
+
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            goToSlide(parseInt(dot.getAttribute('data-slide')));
+        });
+    });
+
+    // Автоматическое переключение каждые 5 секунд
+    // setInterval(nextSlide, 10000);
+}
+
 // Основная инициализация
 document.addEventListener('DOMContentLoaded', () => {
     initObserver(document.querySelectorAll('.animate-y, .animate-y-d, .animate-x, .animate-x-d, .animate-scale, .animate-scale-d'));
@@ -178,4 +208,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initDetails();
     initBrands();
     initHamburger();
+    initSlider();
 });

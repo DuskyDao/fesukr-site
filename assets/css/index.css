@@ -1,0 +1,106 @@
+main {
+    height: 90vh;
+}
+
+.slider-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 33.33%;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.slide-content {
+    width: 50%;
+    padding: 40px;
+    background: linear-gradient(to right, #fff 70%, transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.slide-content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.slide-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.slide-content button {
+    padding: 10px 20px;
+    background-color: #e30613;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: fit-content;
+}
+
+.slide-image {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.dots {
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #e30613;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .slide-content {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.9);
+    }
+
+    .slide-image {
+        width: 100%;
+        opacity: 0.5;
+    }
+
+    .slide-content h2 {
+        font-size: 20px;
+    }
+
+    .slide-content p {
+        font-size: 12px;
+    }
+}
