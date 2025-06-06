@@ -207,12 +207,14 @@ main ol {
 .tabs__button {
   min-width: 250px;
   margin-top: 30px;
-  padding: 10px 20px;
-  color: var(--dark-color);
+  padding: 13px 22px;
+  /* color: var(--dark-color); */
+  color: var(--dark-color-back);
   /* border: 2px solid rgba(0, 0, 0, 0.001); */
   border: none;
   /* background-color: var(--dark-background); */
-  background-color: var(--light-color);
+  background-color: var(--light-background);
+  /* background-color: var(--light-color); */
   /* background-color: inherit; */
   border-radius: 5px;
   font-weight: 600;
@@ -239,7 +241,9 @@ main ol {
   margin-top: 50px;
   padding: 30px 40px;
   border-radius: var(--b-r16);
-  background-color: var(--light-color);
+  /* background-color: var(--light-color); */
+  /* background-color: var(--dark-background); */
+  background-color: var(--light-background);
   box-shadow: 0 .375rem .875rem 0 rgba(0, 0, 0, .13), 0 .0625rem .25rem 0 rgba(0, 0, 0, .11);
 }
 
@@ -272,7 +276,9 @@ main ol {
   justify-content: center;
   flex-wrap: wrap;
   gap: clamp(20px, 4vw, 60px);
-  background-color: var(--light-color);
+  /* background-color: var(--light-color); */
+  /* background-color: var(--dark-background); */
+  background-color: var(--light-background);
   /* background: var(--head__gradient); */
   border-radius: var(--b-r16);
   box-shadow: 0 .375rem .875rem 0 rgba(0, 0, 0, .13), 0 .0625rem .25rem 0 rgba(0, 0, 0, .11);
@@ -324,7 +330,7 @@ main ol {
     width: 65px;
     height: 110%;
     transform: rotate(5deg);
-    background-color: var(--light-color);
+    background-color: var(--light-background);
   }
 }
 
