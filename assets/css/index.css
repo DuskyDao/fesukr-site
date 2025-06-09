@@ -216,6 +216,11 @@
     .advantages__desc {
         color: #333;
     }
+
+    &:hover {
+        transform: translateY(-5px);
+        transition: transform 0.5s ease;
+    }
 }
 
 .advantages__box:nth-child(1) {
