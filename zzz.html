@@ -4,135 +4,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <div class="element">
-        <div class="bar">
-            <div class="items">
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="40" fill="#ff6347" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <polygon points="50,10 60,40 90,40 70,60 80,90 50,70 20,90 30,60 10,40 40,40" fill="#4682b4" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="40" fill="#32cd32" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="40" fill="#ff6347" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <polygon points="50,10 60,40 90,40 70,60 80,90 50,70 20,90 30,60 10,40 40,40" fill="#4682b4" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="40" fill="#32cd32" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="40" fill="#32cd32" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-        <div class="bar">
-            <div class="items">
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <polygon points="50,10 60,40 90,40 70,60 80,90 50,70 20,90 30,60 10,40 40,40" fill="#ff4500" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="40" fill="#2e8b57" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <polygon points="50,10 60,40 90,40 70,60 80,90 50,70 20,90 30,60 10,40 40,40" fill="#9acd32" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <polygon points="50,10 60,40 90,40 70,60 80,90 50,70 20,90 30,60 10,40 40,40" fill="#ff4500" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="40" fill="#2e8b57" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <polygon points="50,10 60,40 90,40 70,60 80,90 50,70 20,90 30,60 10,40 40,40" fill="#9acd32" />
-                    </svg>
-                </div>
-                <div class="item">
-                    <svg width="100" height="100" viewBox="0 0 100 100">
-                        <circle cx="50" cy="50" r="40" fill="#32cd32" />
-                    </svg>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <title>Логотипная карусель</title>
     <style>
-        @keyframes moveSlideshow {
-            100% {
-                transform: translateX(-50%);
+        /* trusts */
+        .trust__header {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+
+            &>p {
+                text-align: center;
+                max-width: 900px;
             }
         }
 
-        .element {
-            transform: translate3d(0, 0, 0);
-            position: relative;
+        .carousel-carousel {
+            width: 100%;
             overflow: hidden;
-            animation: moveSlideshow infinite linear 50s;
-            display: flex;
-            width: max-content;
-            min-width: 200%;
-            flex-shrink: 0;
-            backface-visibility: hidden;
-            /* Improve animation performance */
+            position: relative;
+            margin: 50px auto;
+            max-width: 1000px;
         }
 
-        .bar {
-            width: 50%;
-            flex-shrink: 0;
-            opacity: 1;
+        .trust__carousel-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
         }
 
-        .items {
+        .trust__logo-item {
+            flex: 0 0 200px;
+            height: 100px;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            padding: 0 20px;
         }
 
-        .item {
-            height: 120px;
-            min-width: 220px;
-            width: 220px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 1;
+        .trust__logo-item img {
+            max-width: 100%;
+            max-height: 80%;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .trust__logo-item:hover img {
+            filter: grayscale(0%);
         }
     </style>
+</head>
 
+<body>
+    <!-- нам довіряють -->
+    <section class="trust">
+        <div class="default__container">
+            <div class="trust__header">
+                <h2 class="title">Нам довіряють</h2>
+                <p>Ми пишаємось тим, що нашими партнерами є провідні компанії в Україні та за її межами. Постійно
+                    працюємо над розширенням нашої мережі партнерів та вдосконаленням наших продуктів.</p>
+            </div>
+            <div class="trust__carousel">
+                <div class="trust__carousel-wrapper">
+                    <div class="trust__logo-item">
+                        <img src="assets/img/icons/author-w-blue.svg" alt="Logo 1">
+                    </div>
+                    <div class="trust__logo-item">
+                        <img src="assets/img/icons/buy-calendar.svg" alt="Logo 2">
+                    </div>
+                    <div class="trust__logo-item">
+                        <img src="assets/img/icons/buy-friends.svg" alt="Logo 3">
+                    </div>
+                    <div class="trust__logo-item">
+                        <img src="assets/img/icons/buy-new.svg" alt="Logo 4">
+                    </div>
+                    <div class="trust__logo-item">
+                        <img src="assets/img/icons/calendar-gray.svg" alt="Logo 5">
+                    </div>
+                    <div class="trust__logo-item">
+                        <img src="assets/img/icons/yes.svg" alt="Logo 6">
+                    </div>
+                    <div class="trust__logo-item">
+                        <img src="assets/img/icons/telegram.svg" alt="Logo 7">
+                    </div>
+                    <div class="trust__logo-item">
+                        <img src="assets/img/icons/list.svg" alt="Logo 8">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const track = document.querySelector('.carousel-track');
+            const items = document.querySelectorAll('.logo-item');
+            const itemWidth = items[0].offsetWidth;
+            let currentPosition = 0;
+
+            // Клонируем первые элементы и добавляем в конец для бесконечной прокрутки
+            const cloneCount = Math.ceil(track.offsetWidth / itemWidth);
+            for (let i = 0; i < cloneCount; i++) {
+                const clone = items[i].cloneNode(true);
+                track.appendChild(clone);
+            }
+
+            function moveCarousel() {
+                currentPosition -= itemWidth;
+                track.style.transform = `translateX(${currentPosition}px)`;
+
+                // Когда дошли до конца клонов, возвращаемся к началу без анимации
+                if (currentPosition <= -itemWidth * (items.length)) {
+                    setTimeout(() => {
+                        track.style.transition = 'none';
+                        currentPosition = 0;
+                        track.style.transform = `translateX(${currentPosition}px)`;
+                        setTimeout(() => {
+                            track.style.transition = 'transform 0.5s ease';
+                        }, 50);
+                    }, 500);
+                }
+            }
+
+            // Автоматическая прокрутка каждые 2 секунды
+            setInterval(moveCarousel, 4000);
+        });
+    </script>
 </body>
 
 </html>

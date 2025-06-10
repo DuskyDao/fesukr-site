@@ -146,7 +146,7 @@
 }
 
 /* trusts */
-.trust__wrapper {
+.trust__header {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -160,22 +160,42 @@
     }
 }
 
-.trust__img {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+.trust__carousel {
     width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin: 70px auto;
+    /* max-width: 1000px; */
+}
+
+.trust__carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.trust__logo-item {
+    flex: 0 0 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.trust__logo-item img {
+    max-width: 100%;
+    max-height: 80%;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.trust__logo-item:hover img {
+    filter: grayscale(0%);
 }
 
 /* news */
 .news__title {
     margin-bottom: 2rem;
-
-    & h2 {
-        font-size: 2.5rem;
-    }
 
     & span {
         color: var(--blue-color);
@@ -184,13 +204,8 @@
 
 /*  */
 .advantages__title {
-    margin-top: 4vw;
+    margin-top: 5vw;
     text-align: center;
-
-    & h2 {
-        font-size: 2.5rem;
-        /* text-transform: uppercase; */
-    }
 
     & span {
         color: var(--blue-color);
@@ -219,7 +234,7 @@
 
     .advantages__title-h3 {
         color: var(--blue-color);
-        font-size: 2rem;
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
         font-weight: bold;
         text-align: left;
     }
@@ -227,15 +242,16 @@
     .advantages__desc {
         margin-top: 3px;
         color: var(--dark-color-back);
-        font-size: 1.3rem;
+        font-size: clamp(.9rem, 2vw, 1.2rem);
         font-weight: 500;
-
-        &>span {
-            color: var(--dark-color);
-            font-size: 2rem;
-            font-weight: 700;
-        }
     }
+
+    & span {
+        color: var(--dark-color);
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
 
     .advantages__img {
         /* margin-bottom: 15px; */

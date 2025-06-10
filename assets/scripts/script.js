@@ -201,6 +201,40 @@ function initSlider() {
     setInterval(nextSlide, 10000);
 }
 
+
+function initCarusel() {
+    const track = document.querySelector('.trust__carousel-wrapper');
+    const items = document.querySelectorAll('.trust__logo-item');
+    const itemWidth = items[0].offsetWidth;
+    let currentPosition = 0;
+
+    // Клонируем первые элементы и добавляем в конец для бесконечной прокрутки
+    const cloneCount = Math.ceil(track.offsetWidth / itemWidth);
+    for (let i = 0; i < cloneCount; i++) {
+        const clone = items[i].cloneNode(true);
+        track.appendChild(clone);
+    }
+
+    function moveCarousel() {
+        currentPosition -= itemWidth;
+        track.style.transform = `translateX(${currentPosition}px)`;
+
+        // Когда дошли до конца клонов, возвращаемся к началу без анимации
+        if (currentPosition <= -itemWidth * (items.length)) {
+            setTimeout(() => {
+                track.style.transition = 'none';
+                currentPosition = 0;
+                track.style.transform = `translateX(${currentPosition}px)`;
+                setTimeout(() => {
+                    track.style.transition = 'transform 0.5s ease';
+                }, 50);
+            }, 500);
+        }
+    }
+
+    // Автоматическая прокрутка каждые 2 секунды
+    setInterval(moveCarousel, 3000);
+}
 // Основная инициализация
 document.addEventListener('DOMContentLoaded', () => {
     initObserver(document.querySelectorAll('.animate-y, .animate-y-d, .animate-x, .animate-x-d, .animate-scale, .animate-scale-d'));
@@ -209,4 +243,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initBrands();
     initHamburger();
     initSlider();
+    initCarusel();
 });
