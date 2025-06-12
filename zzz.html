@@ -2,136 +2,63 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Логотипная карусель</title>
-    <style>
-        /* trusts */
-        .trust__header {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
+  <meta charset="UTF-8">
+  <title>D3 Geo Map</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/d3-geo.v3.min.js"></script>
+  <style>
+    path {
+      fill: #000000;
+      /* Цвет по умолчанию (невыделенные страны) */
+      stroke: #ffffff;
+      /* Границы стран */
+      stroke-width: 0.5px;
+      transition: fill 0.3s;
+    }
 
-            &>p {
-                text-align: center;
-                max-width: 900px;
-            }
-        }
+    .highlighted {
+      fill: #00bfff;
+      /* Цвет выделенных стран */
+    }
 
-        .carousel-carousel {
-            width: 100%;
-            overflow: hidden;
-            position: relative;
-            margin: 50px auto;
-            max-width: 1000px;
-        }
-
-        .trust__carousel-wrapper {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .trust__logo-item {
-            flex: 0 0 200px;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 20px;
-        }
-
-        .trust__logo-item img {
-            max-width: 100%;
-            max-height: 80%;
-            filter: grayscale(100%);
-            transition: filter 0.3s ease;
-        }
-
-        .trust__logo-item:hover img {
-            filter: grayscale(0%);
-        }
-    </style>
+    .highlighted:hover {
+      fill: #ff4500;
+      /* Цвет при наведении */
+    }
+  </style>
 </head>
 
 <body>
-    <!-- нам довіряють -->
-    <section class="trust">
-        <div class="default__container">
-            <div class="trust__header">
-                <h2 class="title">Нам довіряють</h2>
-                <p>Ми пишаємось тим, що нашими партнерами є провідні компанії в Україні та за її межами. Постійно
-                    працюємо над розширенням нашої мережі партнерів та вдосконаленням наших продуктів.</p>
-            </div>
-            <div class="trust__carousel">
-                <div class="trust__carousel-wrapper">
-                    <div class="trust__logo-item">
-                        <img src="assets/img/icons/author-w-blue.svg" alt="Logo 1">
-                    </div>
-                    <div class="trust__logo-item">
-                        <img src="assets/img/icons/buy-calendar.svg" alt="Logo 2">
-                    </div>
-                    <div class="trust__logo-item">
-                        <img src="assets/img/icons/buy-friends.svg" alt="Logo 3">
-                    </div>
-                    <div class="trust__logo-item">
-                        <img src="assets/img/icons/buy-new.svg" alt="Logo 4">
-                    </div>
-                    <div class="trust__logo-item">
-                        <img src="assets/img/icons/calendar-gray.svg" alt="Logo 5">
-                    </div>
-                    <div class="trust__logo-item">
-                        <img src="assets/img/icons/yes.svg" alt="Logo 6">
-                    </div>
-                    <div class="trust__logo-item">
-                        <img src="assets/img/icons/telegram.svg" alt="Logo 7">
-                    </div>
-                    <div class="trust__logo-item">
-                        <img src="assets/img/icons/list.svg" alt="Logo 8">
-                    </div>
-                </div>
-            </div>
-        </div>
+  <svg width="800" height="600"></svg>
+  <script>
+    // Загрузка геоданных (замените на реальный URL или локальный файл)
+    d3.json('https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_0_countries.geojson').then(function (geojson) {
+      const svg = d3.select("svg"),
+        width = +svg.attr("width"),
+        height = +svg.attr("height");
 
-    </section>
+      // Проекция для Европы
+      const projection = d3.geoMercator()
+        .center([20, 50]) // Центр на Европу
+        .scale(400)
+        .translate([width / 2, height / 2]);
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const track = document.querySelector('.carousel-track');
-            const items = document.querySelectorAll('.logo-item');
-            const itemWidth = items[0].offsetWidth;
-            let currentPosition = 0;
+      // Путь для отрисовки геометрии
+      const path = d3.geoPath().projection(projection);
 
-            // Клонируем первые элементы и добавляем в конец для бесконечной прокрутки
-            const cloneCount = Math.ceil(track.offsetWidth / itemWidth);
-            for (let i = 0; i < cloneCount; i++) {
-                const clone = items[i].cloneNode(true);
-                track.appendChild(clone);
-            }
-
-            function moveCarousel() {
-                currentPosition -= itemWidth;
-                track.style.transform = `translateX(${currentPosition}px)`;
-
-                // Когда дошли до конца клонов, возвращаемся к началу без анимации
-                if (currentPosition <= -itemWidth * (items.length)) {
-                    setTimeout(() => {
-                        track.style.transition = 'none';
-                        currentPosition = 0;
-                        track.style.transform = `translateX(${currentPosition}px)`;
-                        setTimeout(() => {
-                            track.style.transition = 'transform 0.5s ease';
-                        }, 50);
-                    }, 500);
-                }
-            }
-
-            // Автоматическая прокрутка каждые 2 секунды
-            setInterval(moveCarousel, 4000);
+      // Отрисовка стран
+      svg.selectAll("path")
+        .data(geojson.features)
+        .enter()
+        .append("path")
+        .attr("d", path)
+        .attr("class", d => {
+          const countryName = d.properties.NAME; // Имя страны из GeoJSON
+          const highlightedCountries = ["Poland", "Ukraine", "Italy", "Germany", "France", "Romania", "Bulgaria", "Hungary", "Slovakia", "Czechia"]; // Список ваших стран
+          return highlightedCountries.includes(countryName) ? "highlighted" : "";
         });
-    </script>
+    });
+  </script>
 </body>
 
 </html>
