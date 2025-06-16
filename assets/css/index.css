@@ -361,15 +361,32 @@
     overflow: hidden;
 
     & .map__image {
-        max-width: 1200px;
+        position: relative;
+        width: 1200px;
         height: 660px;
 
         & img {
             border-radius: var(--b-r16);
             box-shadow: 0 .375rem .875rem 0 rgba(0, 0, 0, .13), 0 .0625rem .25rem 0 rgba(0, 0, 0, .11);
-            /* box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.1019607843); */
         }
     }
 }
 
-.map__test {}
+.map__image svg {
+    width: 1000px;
+    height: 100%;
+    /* opacity: 0; */
+
+    &:hover {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+
+        & path {
+            fill: var(--dark-color);
+        }
+
+        #crimea_disputed-0 {
+            fill: var(--dark-color);
+        }
+    }
+}
