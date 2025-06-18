@@ -245,3 +245,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initSlider();
     initCarusel();
 });
+
+const pathsToChange = ['ua', 'pl', 'lv', 'cz', 'lt', 'it', 'md', 'ge', 'az'];
+const uaPath = document.getElementById('ua');
+uaPath.addEventListener('mouseover', () => {
+    pathsToChange.forEach(id => {
+        const path = document.getElementById(id);
+        path.style.fill = 'green';
+    });
+});
+uaPath.addEventListener('mouseout', () => {
+    pathsToChange.forEach(id => {
+        const path = document.getElementById(id);
+        path.style.fill = '#0097d6';
+    });
+});
