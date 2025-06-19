@@ -396,21 +396,54 @@
     }
 }
 
-path {
+/* path {
     transition: fill 0.3s ease;
+} */
+
+
+/* Начальные стили для стран */
+/* #ua,
+#pl,
+#lv,
+#cz,
+#lt,
+#it,
+#md,
+#ge,
+#az {
+    fill: #0097d6 !important;
+    stroke: #ffffff !important;
+    stroke-width: 0.105569px;
+    stroke-miterlimit: 4;
+    stroke-dasharray: none;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+} */
+
+/* Начальные стили для маршрутов */
+[id^="log-"] {
+    /* stroke: #0097d6; */
+    /* stroke-width: 2; */
+    /* opacity: 1; */
+    /* По умолчанию маршруты видны */
+    transition: stroke 0.3s ease, opacity 0.3s ease;
 }
 
-/* .ukraine {
-    fill: red !important;
-} */
+/* Отключаем события для ненужных path */
+path:not([id^="log-"]):not(#ua):not(#pl):not(#lv):not(#cz):not(#lt):not(#it):not(#md):not(#ge):not(#az) {
+    pointer-events: none;
+}
 
-/* #ua:hover {
-    fill: red !important;
-} */
-
-/* #pl:hover {
-    fill: blue !important;
-} */
+#ua,
+#pl,
+#lv,
+#cz,
+#lt,
+#it,
+#md,
+#ge,
+#az {
+    pointer-events: auto;
+}
 
 
 @media (max-width: 1280px) {

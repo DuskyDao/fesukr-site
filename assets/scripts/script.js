@@ -246,17 +246,201 @@ document.addEventListener('DOMContentLoaded', () => {
     initCarusel();
 });
 
+
+// const pathsToChange = ['ua', 'pl', 'lv', 'cz', 'lt', 'it', 'md', 'ge', 'az'];
+// const countryToRouteMap = {
+//     'md': 'log-moldova',
+//     'cz': 'log-czech',
+//     'lt': 'log-lithuania',
+//     'pl': 'log-poland',
+//     'lv': 'log-latvia',
+//     'it': 'log-italy',
+//     'ge': 'log-georgia',
+//     'az': 'log-azerbaijan'
+// };
+
+// pathsToChange.forEach(countryId => {
+//     const countryPath = document.getElementById(countryId);
+//     if (!countryPath) return; // Пропускаем, если элемент не найден
+
+//     countryPath.addEventListener('mouseover', () => {
+//         if (countryId === 'ua') {
+//             // Наведение на Украину: подсвечиваем все страны и маршруты
+//             pathsToChange.forEach(id => {
+//                 const path = document.getElementById(id);
+//                 if (path) {
+//                     path.style.fill = 'green';
+//                     path.style.stroke = 'green';
+//                 }
+
+//                 // Подсвечиваем и делаем видимыми все маршруты
+//                 const routeId = countryToRouteMap[id];
+//                 const routePath = routeId ? document.getElementById(routeId) : null;
+//                 if (routePath) {
+//                     routePath.style.stroke = 'green';
+//                     routePath.style.opacity = '1';
+//                 }
+//             });
+//         } else {
+//             // Наведение на другую страну: подсвечиваем только эту страну, Украину и их маршруты
+//             const uaPath = document.getElementById('ua');
+//             countryPath.style.fill = 'green';
+//             countryPath.style.stroke = 'green';
+//             uaPath.style.fill = 'green';
+//             uaPath.style.stroke = 'green';
+
+//             // Скрываем все маршруты
+//             Object.values(countryToRouteMap).forEach(routeId => {
+//                 const routePath = document.getElementById(routeId);
+//                 if (routePath) {
+//                     routePath.style.opacity = '0';
+//                 }
+//             });
+
+//             // Показываем и подсвечиваем маршрут текущей страны, если он существует
+//             const routeId = countryToRouteMap[countryId];
+//             const routePath = routeId ? document.getElementById(routeId) : null;
+//             if (routePath) {
+
+
+//                 routePath.style.stroke = 'green';
+//                 routePath.style.opacity = '1';
+//             }
+
+//             // Показываем и подсвечиваем маршрут Украины, если он существует
+//             const uaRouteId = countryToRouteMap['ua'];
+//             const uaRoutePath = uaRouteId ? document.getElementById(uaRouteId) : null;
+//             if (uaRoutePath) {
+//                 uaRoutePath.style.stroke = 'green';
+//                 uaRoutePath.style.opacity = '1';
+//             }
+//         }
+//     });
+
+//     countryPath.addEventListener('mouseout', () => {
+//         // Возвращаем исходный цвет для всех стран
+//         pathsToChange.forEach(id => {
+//             const path = document.getElementById(id);
+//             if (path) {
+//                 path.style.fill = '#0097d6';
+//                 path.style.stroke = '#ffffff';
+//             }
+//         });
+
+//         // Возвращаем исходный цвет и видимость для всех маршрутов
+//         Object.values(countryToRouteMap).forEach(routeId => {
+//             const routePath = document.getElementById(routeId);
+//             if (routePath) {
+//                 routePath.style.stroke = '#0097d6';
+//                 routePath.style.opacity = '1';
+//             }
+//         });
+//     });
+// });
+
 const pathsToChange = ['ua', 'pl', 'lv', 'cz', 'lt', 'it', 'md', 'ge', 'az'];
-const uaPath = document.getElementById('ua');
-uaPath.addEventListener('mouseover', () => {
-    pathsToChange.forEach(id => {
-        const path = document.getElementById(id);
-        path.style.fill = 'green';
+const countryToRouteMap = {
+    'md': 'log-moldova',
+    'cz': 'log-czech',
+    'lt': 'log-lithuania',
+    'pl': 'log-poland',
+    'lv': 'log-latvia',
+    'it': 'log-italy',
+    'ge': 'log-georgia',
+    'az': 'log-azerbaijan'
+    // 'ua': 'log-ukraine' // Убрали, если маршрут для Украины отсутствует
+};
+
+pathsToChange.forEach(countryId => {
+    const countryPath = document.getElementById(countryId);
+    if (!countryPath) {
+        console.warn(`Country with id "${countryId}" not found`);
+        return; // Пропускаем, если страна не найдена
+    }
+
+    countryPath.addEventListener('mouseover', () => {
+        if (countryId === 'ua') {
+            // Наведение на Украину: подсвечиваем все страны и маршруты
+            pathsToChange.forEach(id => {
+                const path = document.getElementById(id);
+                if (path) {
+                    path.style.fill = 'green';
+                    // path.style.stroke = 'green';
+                }
+
+                // Подсвечиваем и делаем видимыми все маршруты
+                const routeId = countryToRouteMap[id];
+                const routePath = routeId ? document.getElementById(routeId) : null;
+                if (routePath) {
+                    routePath.style.stroke = '#92efff';
+                    routePath.style.opacity = '1';
+                }
+            });
+        } else {
+            // Наведение на другую страну
+            // 1. Подсвечиваем текущую страну и Украину
+            const uaPath = document.getElementById('ua');
+            if (uaPath) {
+                uaPath.style.fill = 'green';
+                uaPath.style.stroke = '#92efff';
+            }
+            countryPath.style.fill = 'green';
+            countryPath.style.stroke = '#92efff';
+
+            // 2. Остальные страны — fill: #a7bac1, stroke: #ffffff
+            pathsToChange.forEach(id => {
+                if (id !== countryId && id !== 'ua') {
+                    const path = document.getElementById(id);
+                    if (path) {
+                        path.style.fill = '#a7bac1';
+                        path.style.stroke = '#ffffff';
+                    }
+                }
+            });
+
+            // 3. Скрываем все маршруты
+            Object.values(countryToRouteMap).forEach(routeId => {
+                const routePath = document.getElementById(routeId);
+                if (routePath) {
+                    routePath.style.opacity = '0';
+                }
+            });
+
+            // 4. Показываем и подсвечиваем маршрут текущей страны
+            const routeId = countryToRouteMap[countryId];
+            const routePath = routeId ? document.getElementById(routeId) : null;
+            if (routePath) {
+                routePath.style.stroke = '#92efff';
+                routePath.style.opacity = '1';
+            }
+
+            // 5. Показываем и подсвечиваем маршрут Украины, если он существует
+            const uaRouteId = countryToRouteMap['ua'];
+            const uaRoutePath = uaRouteId ? document.getElementById(uaRouteId) : null;
+            if (uaRoutePath) {
+                uaRoutePath.style.stroke = 'green';
+                uaRoutePath.style.opacity = '1';
+            }
+        }
     });
-});
-uaPath.addEventListener('mouseout', () => {
-    pathsToChange.forEach(id => {
-        const path = document.getElementById(id);
-        path.style.fill = '#0097d6';
+
+    countryPath.addEventListener('mouseout', () => {
+        // Возвращаем исходный цвет для всех стран
+        pathsToChange.forEach(id => {
+            const path = document.getElementById(id);
+            if (path) {
+                path.style.fill = '#0097d6';
+                path.style.stroke = '#ffffff';
+            }
+        });
+
+        // Возвращаем исходный цвет и видимость для всех маршрутов
+        Object.values(countryToRouteMap).forEach(routeId => {
+            const routePath = document.getElementById(routeId);
+            if (routePath) {
+                routePath.style.stroke = '#92efff';
+                routePath.style.opacity = '1';
+            }
+        });
     });
 });
