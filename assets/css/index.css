@@ -201,7 +201,7 @@
 .advantages {
     display: flow-root;
     background-color: var(--white-blue-background);
-    padding-bottom: 3vw;
+    padding-bottom: clamp(30px, 6vw, 80px);
 }
 
 .advantages__title {
@@ -215,9 +215,10 @@
 
 .advantages__wrapper {
     max-width: 1000px;
-    margin: 50px auto;
+    margin: clamp(20px, 5vw, 50px) auto 0 auto;
     display: grid;
     grid-template: repeat(12, 1fr) / repeat(12, 1fr);
+    /* justify-content: center; */
     gap: 20px;
     text-align: center;
 }
@@ -338,16 +339,61 @@
     }
 }
 
+/* services */
+.services {
+    display: flow-root;
+    padding-bottom: clamp(30px, 5vw, 60px);
+}
+
+.services__wrapper {
+    margin: clamp(20px, 5vw, 50px) auto 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.services__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-background);
+    border-radius: var(--b-r16);
+    padding: 20px;
+    box-shadow: 10px 10px 30px 0 rgba(0, 0, 0, 0.1019607843);
+    transition: transform 0.5s ease;
+
+    & h3 {
+        color: var(--blue-color);
+        font-size: clamp(1.2rem, 2vw, 1.8rem);
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    & p {
+        color: var(--dark-color-back);
+        font-size: clamp(.9rem, 2vw, 1.2rem);
+        font-weight: 500;
+        text-align: center;
+    }
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+
 /* логистика */
 .logistics {
     /* margin-top: 50px; */
     display: flow-root;
-    padding-bottom: clamp(20px, 5vw, 50px);
+    padding: clamp(30px, 5vw, 60px) 0 10px 0;
     /* background-color: var(--light-background); */
 }
 
 .logistics__wrapper {
-    margin-top: 30px;
+    margin-top: 20px;
     display: grid;
     grid-template-columns: 5fr 6fr;
     /* gap: 20px; */
@@ -363,18 +409,29 @@
     justify-content: center;
     line-height: var(--line-h);
 
-    & h3 {
-        font-size: clamp(1.2rem, 2vw, 1.5rem);
-        font-weight: 600;
-        color: var(--blue-color);
-        /* color: var(--dark-color); */
+    & h2 {
+        font-size: clamp(1.4rem, 2vw, 2.3rem);
         margin-bottom: 20px;
     }
 
-    & p {
-        font-size: clamp(1rem, 2vw, 1.1rem);
+    & ul>li {
+        position: relative;
+        font-size: clamp(14px, 2vw, 1rem);
         color: var(--dark-color-back);
         margin-bottom: 15px;
+        text-indent: 25px;
+
+        &>span {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            top: 3px;
+            left: 0;
+            rotate: -90deg;
+            /* transform-origin: center; */
+            background: url(../img/icons/arrow-blue.svg) center center / contain no-repeat;
+        }
     }
 }
 
@@ -390,19 +447,11 @@
             width: 100%;
             height: 100%;
             border-radius: var(--b-r16);
-            object-fit: cover;
-
         }
     }
 }
 
-/* path {
-    transition: fill 0.3s ease;
-} */
-
-
-/* Начальные стили для стран */
-/* #ua,
+#ua,
 #pl,
 #lv,
 #cz,
@@ -411,21 +460,11 @@
 #md,
 #ge,
 #az {
-    fill: #0097d6 !important;
-    stroke: #ffffff !important;
-    stroke-width: 0.105569px;
-    stroke-miterlimit: 4;
-    stroke-dasharray: none;
-    transition: fill 0.3s ease, stroke 0.3s ease;
-} */
+    transition: fill 0.5s ease, stroke 0.3s ease;
+}
 
-/* Начальные стили для маршрутов */
 [id^="log-"] {
-    /* stroke: #0097d6; */
-    /* stroke-width: 2; */
-    /* opacity: 1; */
-    /* По умолчанию маршруты видны */
-    transition: stroke 0.3s ease, opacity 0.3s ease;
+    transition: stroke .5s ease, opacity .5s ease;
 }
 
 /* Отключаем события для ненужных path */
