@@ -39,7 +39,6 @@
     &.tab-active {
         background: var(--light-color);
         color: var(--dark-color);
-        color: var(--blue-color);
         box-shadow: 0 .275rem .575rem 0 rgba(0, 0, 0, .13), 0 .0525rem .15rem 0 rgba(0, 0, 0, .11);
     }
 }
