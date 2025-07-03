@@ -80,6 +80,52 @@
     }
 }
 
+.company__values {
+    margin: 30px 0 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    & h3 {
+        width: 100%;
+        text-align: center;
+    }
+
+    &>p {
+        max-width: 850px;
+        text-align: center;
+    }
+}
+
+.company__values ul {
+    margin-top: 2vw;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+
+
+
+    & li {
+        text-align: center;
+        max-width: 300px;
+        align-items: center;
+        border: 1px solid var(--dark-color);
+        border-radius: var(--b-r16);
+        padding: 15px 20px;
+        box-shadow: 0 .375rem .875rem 0 rgba(0, 0, 0, .13), 0 .0625rem .25rem 0 rgba(0, 0, 0, .11);
+    }
+
+    & h4 {}
+
+    & li p {
+        font-size: .9rem;
+    }
+}
+
 
 @media screen and (max-width: 1440px) {
     .tabs__nav {

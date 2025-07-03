@@ -1,0 +1,139 @@
+:root {
+    --border-radius: 5px;
+    --col-screen-bg: #e1e4ea;
+    --col-widget-bg: white;
+    --col-shadow: #bbb;
+    --col-primary: #8BCCCB;
+    --col-primary-invert: white;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    background: radial-gradient(circle,
+            rgb(42, 165, 237) 0%,
+            rgb(16, 33, 32) 100%);
+    font-family: "Open Sans", sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+
+.smartphone-screen {
+    background: url(https://images.unsplash.com/photo-1554189097-ffe88e998a2b) no-repeat center center;
+    background-size: cover;
+    width: 300px;
+    height: 600px;
+    border: 10px solid #333;
+    border-radius: 15px;
+    padding: 1rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.screen-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.bottom-bar {
+    border: 2px solid #ccc;
+    border-radius: 50px;
+    width: 50%;
+    top: 15px;
+    position: relative;
+}
+
+.title {
+    font-size: 1.3rem;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0 2em;
+}
+
+.pill {
+    font-size: 0.8rem;
+    padding: 1em;
+    border-radius: 25px;
+    text-decoration: none;
+    color: black;
+    background-color: transparent;
+    transition:
+        background-color .3s ease-in-out,
+        color .3s ease-in-out;
+}
+
+.pill:hover,
+.pill.selected {
+    background-color: var(--col-primary);
+    color: var(--col-primary-invert);
+}
+
+.card {
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    text-decoration: none;
+    transition: box-shadow .5s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.card--main {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.card-title {
+    font-size: .8rem;
+    padding: 0;
+    margin: 0;
+}
+
+.card-content {
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1em 0;
+    text-align: center;
+}
+
+.card-list {
+    display: grid;
+    grid-auto-flow: row dense;
+    gap: 1em;
+    grid-template: repeat(4, 1fr) / repeat(2, 1fr);
+}
+
+.degree {
+    font-size: 2rem;
+}
+
+.weather {
+    font-size: 1rem;
+}

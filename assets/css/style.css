@@ -175,7 +175,7 @@ img {
     --blue-shadow: rgb(125, 166, 189);
     --head__gradient: linear-gradient(90.1deg, rgba(18, 8, 59, 1) 14.5%, rgba(29, 82, 110, 0.2) 135.4%);
     /* --head__gradient: linear-gradient(90.1deg, var(--blue-color) 14.5%, rgba(29, 82, 110, 0) 135.4%); */
-
+    --white-gr-radial: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.5) 70%, rgba(255, 255, 255, 0.8) 100%);
     --b-r16: 16px;
     --line-h: 1.6;
 
