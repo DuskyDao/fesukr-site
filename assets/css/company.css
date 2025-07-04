@@ -83,6 +83,18 @@
     }
 }
 
+/* company hystory */
+.company__history {
+    & a {
+        color: var(--dark-color);
+
+        &:hover {
+            color: var(--blue-color);
+        }
+    }
+}
+
+/* company mission */
 .company__mission h2 {
     text-align: center;
 }
