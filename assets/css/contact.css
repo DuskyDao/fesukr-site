@@ -67,7 +67,7 @@
     & a {
         display: block;
         margin-top: 7px;
-        padding-left: 40px;
+        /* padding-left: 40px; */
         color: var(--dark-color-back);
         /* font-weight: 500; */
         font-size: 1rem;
