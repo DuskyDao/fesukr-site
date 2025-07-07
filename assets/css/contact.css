@@ -59,24 +59,41 @@
 
 .contact_text {
 
+    & address {
+        font-style: normal;
+        margin-top: 20px;
+    }
+
     & a {
-        color: var(--dark-color);
+        display: block;
+        margin-top: 7px;
+        padding-left: 40px;
+        color: var(--dark-color-back);
+        /* font-weight: 500; */
+        font-size: 1rem;
         text-decoration: none;
+
+        &:first-of-type {
+            color: var(--blue-color);
+            font-weight: 500;
+
+            &:hover {
+                color: var(--foxy-color);
+            }
+        }
+
+        &:hover {
+            color: var(--blue-color)
+        }
+
+
     }
 
-    & a:hover {
-        color: var(--blue-color)
-    }
-
-    &>h2 {
+    & h2 {
+        margin-bottom: 30px;
         font-size: 2rem;
         text-align: left;
         transition: opacity .5s ease 1.5s, transform .5s ease 1.5s;
-    }
-
-    & address {
-        margin-top: 10px;
-        font-style: normal;
     }
 
     & h3 {
@@ -85,7 +102,18 @@
         color: var(--blue-color);
     }
 
+    & h4 {
+        margin-top: 10px;
+        padding-left: 20px;
+        font-size: 1rem;
+        font-family: var(--font-family);
+        font-weight: 500;
+        color: var(--dark-color-back);
+    }
+
     & p {
+        padding-left: 20px;
+        display: block;
         margin-top: 7px;
     }
 }

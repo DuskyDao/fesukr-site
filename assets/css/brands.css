@@ -68,28 +68,23 @@
     width: 280px;
 }
 
-/* Petrovsa Sloboda */
-.brand:nth-child(2) .brand__logo>img {
-    width: 260px;
-}
-
-/* MacChocolate */
-.brand:nth-child(3) .brand__logo>img {
-    width: 340px;
-}
-
-/* Macfito */
-.brand:nth-child(4) .brand__logo>img {
-    width: 330px;
-}
-
 /* Hillway */
-.brand:nth-child(5) .brand__logo>img {
+.brand:nth-child(2) .brand__logo>img {
     width: 290px;
 }
 
+/* Macfito */
+.brand:nth-child(3) .brand__logo>img {
+    width: 330px;
+}
+
+/* MacChocolate */
+.brand:nth-child(4) .brand__logo>img {
+    width: 340px;
+}
+
 /* Kracks */
-.brand:nth-child(6) {
+.brand:nth-child(5) {
     & .brand__logo {
         height: 170px;
     }
@@ -99,9 +94,11 @@
     }
 }
 
-/* Hillway */
+/* Tazzanera */
+
+/* Petrovsa Sloboda */
 .brand:nth-child(7) .brand__logo>img {
-    width: 190px;
+    width: 260px;
 }
 
 .brand__overlay {
