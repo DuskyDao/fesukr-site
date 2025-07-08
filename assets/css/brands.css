@@ -79,7 +79,7 @@
 }
 
 /* MacChocolate */
-.brand:nth-child(4) .brand__logo>img {
+.brand:nth-child(6) .brand__logo>img {
     width: 340px;
 }
 
@@ -95,9 +95,12 @@
 }
 
 /* Tazzanera */
+.brand:nth-child(7) .brand__logo>img {
+    width: 250px;
+}
 
 /* Petrovsa Sloboda */
-.brand:nth-child(7) .brand__logo>img {
+.brand:nth-child(4) .brand__logo>img {
     width: 260px;
 }
 
